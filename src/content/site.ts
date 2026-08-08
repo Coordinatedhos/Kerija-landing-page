@@ -87,10 +87,10 @@ export const workshops = {
       alt: "A guest painting delicate flowers onto a folding fan",
     },
     {
-      // The mockup shows painted glasses in this slot; no photo of those was
-      // supplied, so the bunny keychain stands in until one is.
-      src: "/images/workshop-keychain-bunny.jpg",
-      alt: "A hand-painted wooden keychain showing a rabbit in a spring landscape",
+      // Recovered from the mockup screenshot, so this one is only 277x378.
+      // Swap in the original photo when it's available.
+      src: "/images/workshop-glasses.jpg",
+      alt: "Drinking glasses hand-painted with flowers, strawberries, and lemons, held against grass",
     },
     {
       src: "/images/workshop-keychain-child.jpg",

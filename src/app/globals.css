@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --brand-background: #f6f1e8;
+  --brand-foreground: #2a2420;
+  --brand-dark: #1c1815;
+  --brand-cream: #f6f1e8;
+  --brand-accent: #a9825b;
+}
+
+@theme inline {
+  --color-background: var(--brand-background);
+  --color-foreground: var(--brand-foreground);
+  --color-dark: var(--brand-dark);
+  --color-cream: var(--brand-cream);
+  --color-accent: var(--brand-accent);
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset anchor targets so the fixed header doesn't cover section headings. */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--brand-background);
+  color: var(--brand-foreground);
+}

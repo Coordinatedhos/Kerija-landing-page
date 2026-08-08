@@ -1,30 +1,50 @@
+import Image from "next/image";
 import { hero } from "@/content/site";
 
 export default function Hero() {
   return (
-    <section
-      id="home"
-      className="relative flex min-h-[640px] w-full items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_at_top,_#3f382e_0%,_#1c1815_70%)] py-32 md:h-screen"
-    >
-      {/*
-        TODO: replace this gradient with a real photograph, e.g.
-        <Image src="/images/hero.jpg" alt="" fill className="object-cover" priority />
-      */}
-      <div className="absolute inset-0 bg-black/30" />
+    <section id="home" className="relative isolate overflow-hidden">
+      <Image
+        src={hero.background.src}
+        alt={hero.background.alt}
+        fill
+        priority
+        sizes="100vw"
+        className="-z-10 object-cover"
+      />
+      {/* The mockup's backdrop is heavily blurred and lightened behind the card. */}
+      <div className="absolute inset-0 -z-10 bg-cream/25 backdrop-blur-[3px]" />
 
-      <div className="relative z-10 mx-auto max-w-3xl px-6 text-center text-cream">
-        <h1 className="font-serif text-4xl tracking-[0.05em] uppercase sm:text-5xl md:text-6xl">
-          {hero.heading}
-        </h1>
-        <p className="mx-auto mt-6 max-w-xl text-xs tracking-[0.15em] text-cream/80 uppercase sm:text-sm">
-          {hero.subheading}
-        </p>
-        <a
-          href={hero.cta.href}
-          className="mt-10 inline-block border border-cream/50 px-8 py-3 text-xs tracking-[0.2em] uppercase transition-colors hover:border-accent hover:bg-accent hover:text-dark"
-        >
-          {hero.cta.label}
-        </a>
+      <div className="mx-auto max-w-[1400px] px-4 py-10 md:px-8 md:py-14">
+        <div className="grid items-start gap-6 lg:grid-cols-12 lg:gap-0">
+          <div className="bg-slate px-8 py-14 sm:px-12 lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:py-24 lg:pr-24">
+            <h1 className="font-serif text-3xl leading-tight tracking-[0.02em] text-white sm:text-4xl lg:text-[2.9rem]">
+              {hero.heading}
+            </h1>
+            <p className="mt-8 max-w-md text-sm leading-relaxed text-muted">
+              {hero.body}
+            </p>
+            <a
+              href={hero.cta.href}
+              className="mt-10 inline-block border border-white/70 px-9 py-4 text-[11px] font-semibold tracking-[0.12em] text-white uppercase transition-colors hover:bg-white hover:text-slate"
+            >
+              {hero.cta.label}
+            </a>
+          </div>
+
+          {/* Explicit row keeps this in the same grid row as the card so the
+              photo overlaps it, as in the mockup. */}
+          <div className="relative z-10 aspect-[4/5] w-full lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:mt-16 lg:aspect-[5/6]">
+            <Image
+              src={hero.photo.src}
+              alt={hero.photo.alt}
+              fill
+              priority
+              sizes="(min-width: 1024px) 58vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

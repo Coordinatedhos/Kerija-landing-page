@@ -13,9 +13,9 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Bloom Studio | Luxurious Interior Design",
+  title: "Bloom Studio | Handmade Creative Workshops",
   description:
-    "Residential design, home remodeling, and furniture selection by Bloom Studio.",
+    "Creative workshops for every occasion — birthdays, children's parties, bridal showers, city festivals, corporate events, and private celebrations.",
 };
 
 export default function RootLayout({

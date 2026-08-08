@@ -1,20 +1,26 @@
-import Header from "@/components/Header";
+import Marquee from "@/components/Marquee";
+import Masthead from "@/components/Masthead";
+import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Services from "@/components/Services";
-import Portfolio from "@/components/Portfolio";
+import Workshops from "@/components/Workshops";
+import Events from "@/components/Events";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <header>
+        <Marquee />
+        <Masthead />
+        <NavBar />
+      </header>
       <main className="flex-1">
         <Hero />
         <About />
-        <Services />
-        <Portfolio />
+        <Workshops />
+        <Events />
         <Contact />
       </main>
       <Footer />

@@ -1,19 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --brand-background: #f6f1e8;
-  --brand-foreground: #2a2420;
-  --brand-dark: #1c1815;
-  --brand-cream: #f6f1e8;
-  --brand-accent: #a9825b;
+  /* Palette sampled from the design mockups. */
+  --brand-cream: #fdf7f2;
+  --brand-blush: #fceee7;
+  --brand-paper: #fbf7ed;
+  --brand-ink: #1a1d21;
+  --brand-slate: #1e2429;
+  --brand-pink: #f0c7b8;
+  --brand-rust: #a9603f;
+  --brand-foreground: #1a1a1a;
+  --brand-muted: #b4b1ac;
 }
 
 @theme inline {
-  --color-background: var(--brand-background);
-  --color-foreground: var(--brand-foreground);
-  --color-dark: var(--brand-dark);
   --color-cream: var(--brand-cream);
-  --color-accent: var(--brand-accent);
+  --color-blush: var(--brand-blush);
+  --color-paper: var(--brand-paper);
+  --color-ink: var(--brand-ink);
+  --color-slate: var(--brand-slate);
+  --color-pink: var(--brand-pink);
+  --color-rust: var(--brand-rust);
+  --color-foreground: var(--brand-foreground);
+  --color-muted: var(--brand-muted);
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
 }
@@ -22,18 +31,51 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Offset anchor targets so the fixed header doesn't cover section headings. */
+/* Offset anchor targets so the sticky nav bar doesn't cover section headings. */
 section[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 4rem;
+}
+
+body {
+  background: var(--brand-cream);
+  color: var(--brand-foreground);
+}
+
+/* Ticker in the top bar. The track holds two identical copies of the phrase
+   list, so shifting by half its width loops seamlessly. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 45s linear infinite;
+}
+
+/* Speckled fibres of the handmade paper the mockup uses for text cards. */
+.paper-texture {
+  background-color: var(--brand-paper);
+  background-image:
+    radial-gradient(circle, rgba(126, 126, 176, 0.35) 1.1px, transparent 1.2px),
+    radial-gradient(circle, rgba(126, 126, 176, 0.22) 1px, transparent 1.1px);
+  background-size:
+    92px 92px,
+    140px 140px;
+  background-position:
+    0 0,
+    46px 64px;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-}
 
-body {
-  background: var(--brand-background);
-  color: var(--brand-foreground);
+  .marquee-track {
+    animation: none;
+  }
 }

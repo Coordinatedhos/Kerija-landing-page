@@ -1,30 +1,15 @@
-import { brand, footer } from "@/content/site";
+import { brand } from "@/content/site";
 
+// The mockup ends on an empty dusty-pink band, so this stays deliberately bare.
 export default function Footer() {
   return (
-    <footer className="border-t border-cream/10 bg-dark text-cream">
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-12 md:flex-row md:items-center md:justify-between md:px-10">
-        <div>
-          <p className="font-serif text-lg tracking-wide">{brand.name}</p>
-          <p className="mt-2 max-w-sm text-sm text-cream/50">{footer.note}</p>
-        </div>
-
-        <nav className="flex gap-6 text-xs tracking-[0.2em] uppercase">
-          {footer.socials.map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              className="text-cream/70 transition-colors hover:text-accent"
-            >
-              {social.label}
-            </a>
-          ))}
-        </nav>
-      </div>
-
-      <div className="mx-auto max-w-7xl px-6 pb-8 md:px-10">
-        <p className="text-xs text-cream/40">
-          © {new Date().getFullYear()} {brand.name}. All rights reserved.
+    <footer className="bg-pink">
+      <div className="mx-auto max-w-[1240px] px-6 py-14 md:px-16 md:py-20">
+        <p className="font-serif text-xl tracking-[0.02em] text-foreground">
+          {brand.name}
+        </p>
+        <p className="mt-2 text-xs tracking-[0.06em] text-foreground/60">
+          © {new Date().getFullYear()} {brand.name}. {brand.tagline}.
         </p>
       </div>
     </footer>

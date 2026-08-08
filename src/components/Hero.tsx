@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BookingLink from "@/components/BookingLink";
 import { hero } from "@/content/site";
 
 export default function Hero() {
@@ -26,12 +27,9 @@ export default function Hero() {
             <p className="mt-8 max-w-md text-sm leading-relaxed text-muted">
               {hero.body}
             </p>
-            <a
-              href={hero.cta.href}
-              className="mt-10 inline-block border border-white/70 px-9 py-4 text-[11px] font-semibold tracking-[0.12em] text-white uppercase transition-colors hover:bg-white hover:text-slate"
-            >
+            <BookingLink className="mt-10 inline-block border border-white/70 px-9 py-4 text-[11px] font-semibold tracking-[0.12em] text-white uppercase transition-colors hover:bg-white hover:text-slate">
               {hero.cta.label}
-            </a>
+            </BookingLink>
           </div>
 
           {/* Explicit row keeps this in the same grid row as the card so the

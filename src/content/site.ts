@@ -10,6 +10,18 @@ export const brand = {
   tagline: "Handmade Creative Workshops",
 };
 
+export const booking = {
+  /**
+   * TODO: paste the Calendly scheduling link here, e.g.
+   * "https://calendly.com/bloomstudio/workshop".
+   * While this is empty the booking buttons simply scroll to the contact
+   * section, and no Calendly script or cookie is loaded.
+   */
+  calendlyUrl: "",
+  /** Where booking buttons point when Calendly isn't configured yet. */
+  fallbackHref: "#contact",
+};
+
 export const marquee = {
   // Alternates "CREATE" and "DESIGN" exactly as the mockup does.
   phrases: [
@@ -37,7 +49,17 @@ export const masthead = {
   },
 };
 
-export const nav = {
+export type NavLink = {
+  label: string;
+  href: string;
+  /** Opens the Calendly popup rather than jumping to a section. */
+  booking?: boolean;
+};
+
+export const nav: {
+  socials: { label: string; href: string }[];
+  links: NavLink[];
+} = {
   socials: [
     { label: "Instagram", href: "#" }, // TODO: real profile URL
     { label: "Facebook", href: "#" }, // TODO: real profile URL
@@ -48,7 +70,7 @@ export const nav = {
     { label: "WORKSHOPS", href: "#workshops" },
     { label: "CONTACTS", href: "#contact" },
     { label: "EVENTS", href: "#events" },
-    { label: "RESERVE NOW", href: "#contact" },
+    { label: "RESERVE NOW", href: "#contact", booking: true },
   ],
 };
 

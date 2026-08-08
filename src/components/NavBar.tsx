@@ -2,12 +2,18 @@
 
 import { useState } from "react";
 import { nav } from "@/content/site";
+import BookingLink from "@/components/BookingLink";
 import { FacebookIcon, InstagramIcon } from "@/components/Icons";
 
 const SOCIAL_ICONS = {
   Instagram: InstagramIcon,
   Facebook: FacebookIcon,
 } as const;
+
+const DESKTOP_LINK =
+  "text-[13px] tracking-[0.06em] transition-opacity hover:opacity-70";
+const MOBILE_LINK =
+  "block py-3 text-[13px] tracking-[0.06em] transition-opacity hover:opacity-70";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -34,15 +40,17 @@ export default function NavBar() {
         </ul>
 
         <nav className="hidden flex-1 justify-evenly lg:flex">
-          {nav.links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-[13px] tracking-[0.06em] transition-opacity hover:opacity-70"
-            >
-              {link.label}
-            </a>
-          ))}
+          {nav.links.map((link) =>
+            link.booking ? (
+              <BookingLink key={link.label} className={DESKTOP_LINK}>
+                {link.label}
+              </BookingLink>
+            ) : (
+              <a key={link.label} href={link.href} className={DESKTOP_LINK}>
+                {link.label}
+              </a>
+            ),
+          )}
         </nav>
 
         <button
@@ -71,16 +79,26 @@ export default function NavBar() {
           id="mobile-nav"
           className="border-t border-white/15 px-5 pb-4 lg:hidden"
         >
-          {nav.links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="block py-3 text-[13px] tracking-[0.06em] transition-opacity hover:opacity-70"
-            >
-              {link.label}
-            </a>
-          ))}
+          {nav.links.map((link) =>
+            link.booking ? (
+              <BookingLink
+                key={link.label}
+                className={MOBILE_LINK}
+                onSelect={() => setOpen(false)}
+              >
+                {link.label}
+              </BookingLink>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className={MOBILE_LINK}
+              >
+                {link.label}
+              </a>
+            ),
+          )}
         </nav>
       )}
     </div>

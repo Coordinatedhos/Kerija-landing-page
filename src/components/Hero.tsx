@@ -3,7 +3,9 @@ import { hero } from "@/content/site";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative isolate overflow-hidden">
+    // z-20 keeps the photo above the About section it overhangs; no
+    // overflow-hidden, or that overhang would be clipped off.
+    <section id="home" className="relative z-20 isolate">
       <Image
         src={hero.background.src}
         alt={hero.background.alt}
@@ -15,7 +17,7 @@ export default function Hero() {
       {/* The mockup's backdrop is heavily blurred and lightened behind the card. */}
       <div className="absolute inset-0 -z-10 bg-cream/25 backdrop-blur-[3px]" />
 
-      <div className="mx-auto max-w-[1400px] px-4 py-10 md:px-8 md:py-14">
+      <div className="mx-auto max-w-[1400px] px-4 pt-10 pb-10 md:px-8 md:pt-14 md:pb-0">
         <div className="grid items-start gap-6 lg:grid-cols-12 lg:gap-0">
           <div className="bg-slate px-8 py-14 sm:px-12 lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:py-24 lg:pr-24">
             <h1 className="font-serif text-3xl leading-tight tracking-[0.02em] text-white sm:text-4xl lg:text-[2.9rem]">
@@ -33,8 +35,9 @@ export default function Hero() {
           </div>
 
           {/* Explicit row keeps this in the same grid row as the card so the
-              photo overlaps it, as in the mockup. */}
-          <div className="relative z-10 aspect-[4/5] w-full lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:mt-16 lg:aspect-[5/6]">
+              photo overlaps it, as in the mockup. The negative bottom margin
+              lets it hang past the section and over the About card. */}
+          <div className="relative z-10 aspect-[4/5] w-full lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:mt-16 lg:-mb-28 lg:aspect-[5/6]">
             <Image
               src={hero.photo.src}
               alt={hero.photo.alt}

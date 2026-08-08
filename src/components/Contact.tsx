@@ -28,7 +28,7 @@ export default function Contact() {
     <section id="contact" className="bg-pink">
       {/* Torn top edge, so the paper appears ripped away from the band above. */}
       <div className="text-paper">
-        <TornEdge flip className="h-8 sm:h-10" />
+        <TornEdge flip className="h-12 sm:h-16" />
       </div>
 
       <div className="paper-texture">
@@ -61,7 +61,7 @@ export default function Contact() {
       </div>
 
       <div className="text-paper">
-        <TornEdge className="h-8 sm:h-10" />
+        <TornEdge className="h-12 sm:h-16" />
       </div>
     </section>
   );

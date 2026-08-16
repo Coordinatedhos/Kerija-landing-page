@@ -228,9 +228,7 @@ export const personalised = {
     heading: "WHAT WE CONSIDER",
     items: [
       {
-        // The mockup's first bullet has no emoji, most likely a font fallback
-        // in the export rather than a choice — this keeps the set consistent.
-        icon: "👥",
+        // No emoji on this one, as the mockup has it.
         label: "Number of guests",
         body: "Small gathering or large group — we adapt the workshop to your group.",
       },

@@ -18,7 +18,9 @@ export default function Personalised() {
             </p>
           </div>
 
-          <div className="relative aspect-[9/8] w-full lg:col-span-7 lg:col-start-6">
+          {/* z-10 so this photo covers the top corner of the card below it,
+              which is how the mockup tucks the two together. */}
+          <div className="relative z-10 aspect-[9/8] w-full lg:col-span-7 lg:col-start-6">
             <Photo
               photo={personalised.photos.brushes}
               sizes="(min-width: 1024px) 58vw, 100vw"
@@ -26,43 +28,44 @@ export default function Personalised() {
           </div>
         </div>
 
-        {/* Flush against the block above on desktop, as the mockup stacks them. */}
-        <div className="mt-10 grid items-center gap-8 lg:mt-2 lg:grid-cols-12 lg:gap-0">
-          {/* Two halves of the same workshop photo, stacked and offset the way
-              the mockup collages them: the children above, the table of
-              supplies below. Each aspect matches its file, so nothing is
-              trimmed again here. */}
-          <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1">
-            <div className="relative aspect-[4/3] w-[70%]">
+        <div className="mt-10 grid gap-8 lg:-mt-12 lg:grid-cols-12 lg:gap-0">
+          {/* Two halves of one photo, kept at matching scale so the scene runs
+              on unbroken across the seam. The upper file is 760px wide taken
+              from 150px into a 1280px original, which is where the 59.4% width
+              and the 11.7% offset come from — change one and the join shows. */}
+          <div className="lg:col-span-6 lg:col-start-1 lg:row-start-1">
+            <div className="relative ml-[11.7%] aspect-[4/3] w-[59.4%]">
               <Photo
                 photo={personalised.photos.children}
-                sizes="(min-width: 1024px) 29vw, 70vw"
+                sizes="(min-width: 1024px) 30vw, 59vw"
               />
             </div>
-            <div className="relative -mt-1 aspect-[32/9] w-full">
+            <div className="relative aspect-[32/9] w-full">
               <Photo
                 photo={personalised.photos.supplies}
-                sizes="(min-width: 1024px) 42vw, 100vw"
+                sizes="(min-width: 1024px) 50vw, 100vw"
               />
             </div>
           </div>
 
-          <div className="bg-cream px-7 py-10 sm:px-10 lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:py-12">
-            <h2 className="font-serif text-3xl tracking-[0.04em] text-foreground sm:text-4xl">
+          <div className="bg-cream px-7 py-10 sm:px-10 lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:pt-16">
+            <h2 className="text-center font-serif text-3xl tracking-[0.04em] text-foreground sm:text-4xl">
               {personalised.consider.heading}
             </h2>
-            <dl className="mt-6">
+            {/* One continuous block of lines, no gaps between the four — the
+                mockup runs them together at a single line height. */}
+            <dl className="mt-6 font-serif text-base leading-[1.5] text-foreground sm:text-lg">
               {personalised.consider.items.map((item) => (
-                <div key={item.label} className="mt-4 first:mt-0">
-                  <dt className="font-serif text-base text-foreground sm:text-lg">
-                    <span aria-hidden="true" className="mr-1.5">
-                      {item.icon}
-                    </span>
+                <div key={item.label}>
+                  <dt>
+                    {item.icon ? (
+                      <span aria-hidden="true" className="mr-1.5">
+                        {item.icon}
+                      </span>
+                    ) : null}
                     {item.label}
                   </dt>
-                  <dd className="font-serif text-base leading-[1.45] text-foreground sm:text-lg">
-                    {item.body}
-                  </dd>
+                  <dd>{item.body}</dd>
                 </div>
               ))}
             </dl>

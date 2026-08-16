@@ -29,15 +29,20 @@ export default function Personalised() {
         </div>
 
         <div className="mt-10 grid gap-8 lg:-mt-12 lg:grid-cols-12 lg:gap-0">
-          {/* Two halves of one photo, kept at matching scale so the scene runs
-              on unbroken across the seam. The upper file is 760px wide taken
-              from 150px into a 1280px original, which is where the 59.4% width
-              and the 11.7% offset come from — change one and the join shows. */}
+          {/* Two halves of one photo. From lg up they are held at matching
+              scale so the scene runs on unbroken across the seam: the upper
+              file is 760px wide taken from 150px into a 1280px original, which
+              is where the 59.4% width and 11.7% offset come from — change one
+              without the other and the join shows.
+
+              Stacked on a phone that inset just reads as a misalignment
+              against the full-width photo above, so both go edge to edge
+              there and the pair reads as two photos rather than one. */}
           <div className="lg:col-span-6 lg:col-start-1 lg:row-start-1">
-            <div className="relative ml-[11.7%] aspect-[4/3] w-[59.4%]">
+            <div className="relative aspect-[4/3] w-full lg:ml-[11.7%] lg:w-[59.4%]">
               <Photo
                 photo={personalised.photos.children}
-                sizes="(min-width: 1024px) 30vw, 59vw"
+                sizes="(min-width: 1024px) 30vw, 100vw"
               />
             </div>
             <div className="relative aspect-[32/9] w-full">

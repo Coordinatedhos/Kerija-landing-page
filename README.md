@@ -21,18 +21,19 @@ components for copy, photos, links, or contact details.
 
 ## Page order
 
-| Section | Component | Anchor |
-| --- | --- | --- |
-| Ticker, masthead, nav | `Marquee`, `Masthead`, `NavBar` | — |
-| Where creativity blooms? | `Hero` | `#home` |
-| About Bloom Studio | `About` | `#about` |
-| Personalised to fit your event | `Workshops` | `#workshops` |
-| How it works | `HowItWorks` | `#how-it-works` |
-| Events we do | `EventsWeDo` | `#events` |
-| Every event is different / What we consider | `Personalised` | — |
-| What we consider (enquiry list) | `Enquiry` | — |
-| Booking calendar | `Schedule` | `#book` |
-| Book your event | `Contact` | `#contact` |
+| Section                                     | Component                       | Anchor          |
+| ------------------------------------------- | ------------------------------- | --------------- |
+| Ticker, masthead, nav                       | `Marquee`, `Masthead`, `NavBar` | —               |
+| Where creativity blooms?                    | `Hero`                          | `#home`         |
+| About Bloom Studio                          | `About`                         | `#about`        |
+| Personalised to fit your event              | `Workshops`                     | `#workshops`    |
+| How it works                                | `HowItWorks`                    | `#how-it-works` |
+| Events we do                                | `EventsWeDo`                    | `#events`       |
+| Every event is different / What we consider | `Personalised`                  | —               |
+| Plan your experience now                    | `PlanExperience`                | —               |
+| Booking calendar                            | `Schedule`                      | `#book`         |
+| Book your event                             | `Contact`                       | `#contact`      |
+| Footer                                      | `Footer`                        | —               |
 
 ## Still to fill in
 
@@ -43,13 +44,13 @@ to a blush placeholder panel rather than a broken image —
 [`Photo.tsx`](src/components/Photo.tsx) checks at build time whether each file
 is actually there.
 
-| File | Photo | Used by |
-| --- | --- | --- |
-| `events-picnic.jpg` | Guests painting on picnic blankets in the park | Circle in "Events we do" |
-| `brushes-circle.jpg` | Circle of hands holding painted hairbrushes | "Every event is different" |
-| `kids-children.jpg` | The three children decorating keyrings | Collage, upper tile |
-| `kids-supplies.jpg` | Paint pens and the box of beads and ribbons | Collage, lower tile |
-| `fans-pencils.jpg` | Painted fans with pencil tins and paint palettes | Enquiry section |
+| File                 | Photo                                            | Used by                     |
+| -------------------- | ------------------------------------------------ | --------------------------- |
+| `events-picnic.jpg`  | Guests painting on picnic blankets in the park   | Circle in "Events we do"    |
+| `brushes-circle.jpg` | Circle of hands holding painted hairbrushes      | "Every event is different"  |
+| `kids-children.jpg`  | The three children decorating keyrings           | Collage, upper tile         |
+| `kids-supplies.jpg`  | Paint pens and the box of beads and ribbons      | Collage, lower tile         |
+| `fans-pencils.jpg`   | Painted fans with pencil tins and paint palettes | "Plan your experience" band |
 
 The two `kids-*` files are cut from one original photo, the way the mockup cuts
 it: the children above, the table of supplies below. They are separate files
@@ -59,17 +60,15 @@ table. Each file is already the tile's aspect ratio, so nothing is trimmed twice
 
 Photos in place from earlier:
 
-| Slot | Current file | Notes |
-| --- | --- | --- |
-| Hero photo | `hero-pots.jpg` | Original |
-| Hero / About backdrop, bands | `flowers.jpg` | Cropped from the mockup screenshot — a higher-resolution original would sharpen the thin bands and the calendar backdrop |
-| Workshop tile 1 | `workshop-fan.jpg` | Original |
-| Workshop tile 2 | `workshop-glasses.jpg` | **277×378, recovered from the mockup screenshot — replace with the original when available** |
-| Workshop tile 3 | `workshop-keychain-child.jpg` | Original |
-| Workshop tile 4 | `workshop-keychain-owl.jpg` | Original |
-
-`workshop-keychain-bunny.jpg` is in `public/images/` but not currently shown —
-the design has four tiles and the glasses photo took that slot.
+| Slot                         | Current file                  | Notes                                                                                                                    |
+| ---------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Hero photo                   | `hero-pots.jpg`               | Original                                                                                                                 |
+| Hero / About backdrop, bands | `flowers.jpg`                 | Cropped from the mockup screenshot — a higher-resolution original would sharpen the thin bands and the calendar backdrop |
+| Workshop tile 1              | `workshop-fan.jpg`            | Original                                                                                                                 |
+| Workshop tile 2              | `workshop-glasses.jpg`        | **277×378, recovered from the mockup screenshot — replace with the original when available**                             |
+| Workshop tile 3              | `workshop-keychain-child.jpg` | Original                                                                                                                 |
+| Workshop tile 4              | `workshop-keychain-owl.jpg`   | Original                                                                                                                 |
+| "Plan your experience" inset | `workshop-keychain-bunny.jpg` | Original                                                                                                                 |
 
 ### Calendly booking link
 
@@ -112,17 +111,17 @@ socials: [
 The contact section shows a globe icon with nothing beside it, matching the
 mockup. Set `contact.website` to fill it in.
 
-### The repeated heading
-
-The mockup uses **WHAT WE CONSIDER** twice — once for the four things that shape
-a workshop, and again for the details to send when enquiring. Both are
-transcribed as drawn. The second one is `enquiry.heading` if you'd rather it
-read something like "WHAT WE NEED FROM YOU".
-
 ## Layout notes
 
 A few details that aren't obvious from reading the components:
 
+- **Scroll reveals.** [`Reveal.tsx`](src/components/Reveal.tsx) fades and lifts
+  a block into place the first time it scrolls into view, with a `delay` prop
+  for staggering neighbours (the four workshop tiles, the five steps). The
+  hidden starting state is scoped to a `js` class that `layout.tsx` sets before
+  first paint, so with JavaScript off the content is simply visible rather than
+  stranded at opacity 0. `prefers-reduced-motion` is handled the same way in
+  `globals.css`, which is why `Reveal` has no check for it.
 - **Scrolling text.** [`Ticker.tsx`](src/components/Ticker.tsx) is used wherever
   a line is longer than the space it has — the top bar, and the list of event
   types under "Events we do", which is far too long to fit at any width. It
@@ -141,4 +140,10 @@ A few details that aren't obvious from reading the components:
 - **The thin floral strips** between sections are `FloralBand`, standing in for
   the mockup's habit of laying cards over the background photo.
 - **Fonts**: Playfair Display for headings and body serif, Jost for the small
-  uppercase sans, and Great Vibes for the step numerals in "How it works" only.
+  uppercase sans, and Great Vibes for script accents — the step numerals in
+  "How it works", "experience now" in the invitation band, and "Menu" in the
+  footer.
+- **The invitation band and footer** take their structure from
+  glamhausdesignco.com: photo beside a light card with a centred headline and a
+  dark CTA, and a three-panel footer split by hairlines. The palette, type and
+  hard-edged corners stay Bloom Studio's.

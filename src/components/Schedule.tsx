@@ -1,6 +1,7 @@
 import Image from "next/image";
 import BookingLink from "@/components/BookingLink";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
+import Reveal from "@/components/Reveal";
 import { booking, schedule } from "@/content/site";
 
 export default function Schedule() {
@@ -19,23 +20,25 @@ export default function Schedule() {
       <div className="mx-auto max-w-[920px] px-4 py-14 md:px-8 md:py-20">
         <h2 className="sr-only">{schedule.heading}</h2>
 
-        <div className="bg-white">
-          {/* Empty dark cap on the card, as drawn in the mockup. */}
-          <div className="h-14 bg-charcoal" />
+        <Reveal>
+          <div className="bg-white">
+            {/* Empty dark cap on the card, as drawn in the mockup. */}
+            <div className="h-14 bg-charcoal" />
 
-          {booking.calendlyUrl ? (
-            <CalendlyEmbed className="min-h-[42rem] w-full" />
-          ) : (
-            <div className="px-6 py-16 text-center">
-              <p className="font-serif text-xl text-foreground sm:text-2xl">
-                {schedule.prompt}
-              </p>
-              <BookingLink className="mt-8 inline-block border border-foreground/70 px-9 py-4 text-[11px] font-semibold tracking-[0.12em] text-foreground uppercase transition-colors hover:bg-foreground hover:text-cream">
-                {schedule.cta}
-              </BookingLink>
-            </div>
-          )}
-        </div>
+            {booking.calendlyUrl ? (
+              <CalendlyEmbed className="min-h-[42rem] w-full" />
+            ) : (
+              <div className="px-6 py-16 text-center">
+                <p className="font-serif text-xl text-foreground sm:text-2xl">
+                  {schedule.prompt}
+                </p>
+                <BookingLink className="mt-8 inline-block border border-foreground/70 px-9 py-4 text-[11px] font-semibold tracking-[0.12em] text-foreground uppercase transition-colors hover:bg-foreground hover:text-cream">
+                  {schedule.cta}
+                </BookingLink>
+              </div>
+            )}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

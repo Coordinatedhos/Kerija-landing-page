@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Playfair_Display, Jost, Great_Vibes } from "next/font/google";
 import "./globals.css";
 
@@ -35,6 +36,11 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${jost.variable} ${greatVibes.variable} h-full antialiased`}
     >
+      {/* Runs before any other script and before first paint, so the scroll
+          reveals start hidden only when there is JavaScript to un-hide them. */}
+      <Script id="js-enabled" strategy="beforeInteractive">
+        {`document.documentElement.classList.add("js")`}
+      </Script>
       <body
         className="min-h-full flex flex-col bg-background text-foreground font-sans"
         suppressHydrationWarning

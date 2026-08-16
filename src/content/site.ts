@@ -251,23 +251,32 @@ export const personalised = {
   },
 };
 
-export const enquiry = {
-  // The mockup repeats "WHAT WE CONSIDER" here; it reads like a slip for
-  // something along the lines of "WHAT WE NEED FROM YOU". Change it here.
-  heading: "WHAT WE CONSIDER",
-  items: [
-    "Name",
-    "Email/phone",
-    "Event type",
-    "Date",
-    "Location",
-    "Number of guests",
-  ],
+/** The invitation band: photo, headline, booking button. */
+export const plan = {
+  // Split so the second half can be set in script, as the reference does.
+  lead: "Plan your",
+  accent: "experience now",
+  body: "Tell us the date and the occasion — we'll bring the materials, the guidance and the inspiration.",
+  cta: "BOOK YOUR ACTIVITY",
   photo: {
     src: "/images/fans-pencils.jpg",
     alt: "Hand-painted folding fans on a table with tins of colouring pencils, watercolour palettes and brushes",
     position: "center 38%",
   } satisfies Photo,
+  inset: {
+    src: "/images/workshop-keychain-bunny.jpg",
+    alt: "A wooden keyring hand-painted with a bunny",
+  } satisfies Photo,
+  background: {
+    src: "/images/flowers.jpg",
+    alt: "",
+  } satisfies Photo,
+};
+
+export const footer = {
+  menuHeading: "Menu",
+  note: "Bring your people together through creativity.",
+  cta: "BOOK YOUR ACTIVITY",
 };
 
 export const schedule = {

@@ -75,9 +75,31 @@ body {
     46px 64px;
 }
 
+/* Scroll reveal. Only armed once the inline script in layout.tsx has confirmed
+   JavaScript is running, so without it the content is plainly visible instead
+   of stranded at opacity 0. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   /* Hold the line still, but let it be scrolled by hand so nothing is

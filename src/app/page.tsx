@@ -8,7 +8,7 @@ import FloralBand from "@/components/FloralBand";
 import HowItWorks from "@/components/HowItWorks";
 import EventsWeDo from "@/components/EventsWeDo";
 import Personalised from "@/components/Personalised";
-import Enquiry from "@/components/Enquiry";
+import PlanExperience from "@/components/PlanExperience";
 import Schedule from "@/components/Schedule";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -30,7 +30,7 @@ export default function Home() {
         <EventsWeDo />
         <Personalised />
         <FloralBand />
-        <Enquiry />
+        <PlanExperience />
         <Schedule />
         <Contact />
       </main>

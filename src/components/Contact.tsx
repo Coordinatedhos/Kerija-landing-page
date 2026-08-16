@@ -1,3 +1,4 @@
+import Reveal from "@/components/Reveal";
 import TornEdge from "@/components/TornEdge";
 import { GlobeIcon, MailIcon, PhoneIcon } from "@/components/Icons";
 import { contact } from "@/content/site";
@@ -34,30 +35,35 @@ export default function Contact() {
 
       <div className="paper-texture">
         <div className="mx-auto max-w-[1240px] px-6 pt-10 pb-24 md:px-16 md:pt-14 md:pb-32">
-          <h2 className="font-serif text-3xl tracking-[0.01em] text-foreground sm:text-4xl lg:text-5xl">
-            {contact.heading}
-          </h2>
+          <Reveal>
+            <h2 className="font-serif text-3xl tracking-[0.01em] text-foreground sm:text-4xl lg:text-5xl">
+              {contact.heading}
+            </h2>
 
-          <dl className="mt-10 space-y-6">
-            {rows.map(({ key, Icon, value, href }) => (
-              <div key={key} className="flex items-center gap-8">
-                <dt className="shrink-0">
-                  <Icon className="h-7 w-7 text-rust" />
-                  <span className="sr-only">{key}</span>
-                </dt>
-                <dd className="text-lg text-foreground sm:text-xl">
-                  {href ? (
-                    <a href={href} className="transition-colors hover:text-rust">
-                      {value}
-                    </a>
-                  ) : (
-                    // The mockup leaves the website row blank; nothing to link yet.
-                    <span className="sr-only">Website not provided</span>
-                  )}
-                </dd>
-              </div>
-            ))}
-          </dl>
+            <dl className="mt-10 space-y-6">
+              {rows.map(({ key, Icon, value, href }) => (
+                <div key={key} className="flex items-center gap-8">
+                  <dt className="shrink-0">
+                    <Icon className="h-7 w-7 text-rust" />
+                    <span className="sr-only">{key}</span>
+                  </dt>
+                  <dd className="text-lg text-foreground sm:text-xl">
+                    {href ? (
+                      <a
+                        href={href}
+                        className="transition-colors hover:text-rust"
+                      >
+                        {value}
+                      </a>
+                    ) : (
+                      // The mockup leaves the website row blank; nothing to link yet.
+                      <span className="sr-only">Website not provided</span>
+                    )}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
         </div>
       </div>
 

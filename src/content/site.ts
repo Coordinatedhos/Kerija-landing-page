@@ -22,9 +22,8 @@ export const booking = {
   /**
    * TODO: paste the Calendly scheduling link here, e.g.
    * "https://calendly.com/bloomstudio/workshop".
-   * While this is empty the booking buttons simply scroll to the contact
-   * section, the calendar shows a booking prompt instead of the Calendly
-   * embed, and no Calendly script or cookie is loaded.
+   * While this is empty the booking buttons simply scroll to the footer and
+   * no Calendly script or cookie is loaded.
    */
   calendlyUrl: "",
   /** Where booking buttons point when Calendly isn't configured yet. */
@@ -208,8 +207,8 @@ export const personalised = {
   body: "We personalise each experience based on your event, number of guests, age group, location and preferences.",
   // The mockup cuts one photo of the children's workshop into two tiles: the
   // children above, the table of supplies below. Both are cut from the same
-  // original, so each tile has its own file rather than one file cropped by
-  // object-fit, which can only ever trim a single axis.
+  // original over the same horizontal span, so shown at one width they sit at
+  // one scale and the scene runs on unbroken across the join.
   photos: {
     brushes: {
       src: "/images/brushes-circle.jpg",
@@ -218,10 +217,13 @@ export const personalised = {
     children: {
       src: "/images/kids-children.jpg",
       alt: "Children decorating wooden keyrings with paint pens at an outdoor table",
+      // Anchored to the join, so cropping on small screens takes off the top.
+      position: "center bottom",
     } satisfies Photo,
     supplies: {
       src: "/images/kids-supplies.jpg",
       alt: "Cases of acrylic paint pens and a box of beads, ribbons and findings on the workshop table",
+      position: "center top",
     } satisfies Photo,
   },
   consider: {
@@ -256,7 +258,7 @@ export const plan = {
   // Split so the second half can be set in script, as the reference does.
   lead: "Plan your",
   accent: "experience now",
-  body: "Tell us the date and the occasion — we'll bring the materials, the guidance and the inspiration.",
+  body: "Pick a date that suits you.",
   cta: "BOOK YOUR ACTIVITY",
   photo: {
     src: "/images/fans-pencils.jpg",
@@ -279,21 +281,8 @@ export const footer = {
   cta: "BOOK YOUR ACTIVITY",
 };
 
-export const schedule = {
-  /** Screen-reader heading only; the mockup shows the calendar on its own. */
-  heading: "Book a date",
-  prompt: "Pick a date that suits you.",
-  cta: "BOOK YOUR ACTIVITY",
-  background: {
-    src: "/images/flowers.jpg",
-    alt: "",
-  },
-};
-
+/** Shown in the footer, now that the standalone contact card is gone. */
 export const contact = {
-  heading: "BOOK YOUR EVENT",
   phone: "27521151",
   email: "kerijazute@gmail.com",
-  // The mockup shows a globe icon with no address filled in yet.
-  website: "",
 };

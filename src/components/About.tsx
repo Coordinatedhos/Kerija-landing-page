@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/components/Reveal";
 import TornEdge from "@/components/TornEdge";
 import { about } from "@/content/site";
 
@@ -18,20 +19,22 @@ export default function About() {
         <div className="text-paper">
           <TornEdge flip className="h-12 sm:h-16" />
           <div className="paper-texture px-6 pb-4 sm:px-12">
-            <h2 className="font-serif text-4xl text-foreground sm:text-5xl">
-              {about.heading}
-            </h2>
-            {/* The mockup runs the paragraphs together with no gap between. */}
-            <div className="mt-3">
-              {about.body.map((paragraph) => (
-                <p
-                  key={paragraph}
-                  className="font-serif text-lg leading-[1.55] text-foreground sm:text-xl lg:text-[1.55rem]"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+            <Reveal>
+              <h2 className="font-serif text-4xl text-foreground sm:text-5xl">
+                {about.heading}
+              </h2>
+              {/* The mockup runs the paragraphs together with no gap between. */}
+              <div className="mt-3">
+                {about.body.map((paragraph) => (
+                  <p
+                    key={paragraph}
+                    className="font-serif text-lg leading-[1.55] text-foreground sm:text-xl lg:text-[1.55rem]"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </Reveal>
           </div>
           <TornEdge className="h-12 sm:h-16" />
         </div>

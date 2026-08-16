@@ -1,4 +1,4 @@
-// Deckled paper edge used on the About and Contact cards.
+// Deckled paper edge used on the About card.
 //
 // Two things make it read as torn rather than merely wavy: the outline layers
 // several sine waves of unrelated frequencies so it never visibly repeats, and

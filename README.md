@@ -31,9 +31,7 @@ components for copy, photos, links, or contact details.
 | Events we do                                | `EventsWeDo`                    | `#events`       |
 | Every event is different / What we consider | `Personalised`                  | —               |
 | Plan your experience now                    | `PlanExperience`                | —               |
-| Booking calendar                            | `Schedule`                      | `#book`         |
-| Book your event                             | `Contact`                       | `#contact`      |
-| Footer                                      | `Footer`                        | —               |
+| Footer, with contact details                | `Footer`                        | `#contact`      |
 
 ## Still to fill in
 
@@ -53,28 +51,27 @@ is actually there.
 | `fans-pencils.jpg`   | Painted fans with pencil tins and paint palettes | "Plan your experience" band |
 
 The two `kids-*` files are cut from one original photo, the way the mockup cuts
-it: the children above, the table of supplies below. They are separate files
-because `object-fit` can only ever crop one axis, and these two crops differ on
-both — the upper tile is a zoom on the children, the lower a wide strip of the
-table. Each file is already the tile's aspect ratio, so nothing is trimmed twice.
+it: the children above, the table of supplies below. Both are cut over the same
+horizontal span (760px of a 1280px original, starting 150px in), so shown at one
+width they sit at one scale and the scene runs on unbroken across the join.
+Keep that in step if you ever recrop either one.
 
 Photos in place from earlier:
 
-| Slot                         | Current file                  | Notes                                                                                                                    |
-| ---------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| Hero photo                   | `hero-pots.jpg`               | Original                                                                                                                 |
-| Hero / About backdrop, bands | `flowers.jpg`                 | Cropped from the mockup screenshot — a higher-resolution original would sharpen the thin bands and the calendar backdrop |
-| Workshop tile 1              | `workshop-fan.jpg`            | Original                                                                                                                 |
-| Workshop tile 2              | `workshop-glasses.jpg`        | **277×378, recovered from the mockup screenshot — replace with the original when available**                             |
-| Workshop tile 3              | `workshop-keychain-child.jpg` | Original                                                                                                                 |
-| Workshop tile 4              | `workshop-keychain-owl.jpg`   | Original                                                                                                                 |
-| "Plan your experience" inset | `workshop-keychain-bunny.jpg` | Original                                                                                                                 |
+| Slot                         | Current file                  | Notes                                                                                                                             |
+| ---------------------------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Hero photo                   | `hero-pots.jpg`               | Original                                                                                                                          |
+| Hero / About backdrop, bands | `flowers.jpg`                 | Cropped from the mockup screenshot — a higher-resolution original would sharpen the thin bands and the invitation band's backdrop |
+| Workshop tile 1              | `workshop-fan.jpg`            | Original                                                                                                                          |
+| Workshop tile 2              | `workshop-glasses.jpg`        | **277×378, recovered from the mockup screenshot — replace with the original when available**                                      |
+| Workshop tile 3              | `workshop-keychain-child.jpg` | Original                                                                                                                          |
+| Workshop tile 4              | `workshop-keychain-owl.jpg`   | Original                                                                                                                          |
+| "Plan your experience" inset | `workshop-keychain-bunny.jpg` | Original                                                                                                                          |
 
 ### Calendly booking link
 
-One link switches on three things at once: the `BOOK YOUR ACTIVITY` and
-`RESERVE NOW` popups, and the calendar section, which swaps its booking prompt
-for the real inline Calendly widget.
+One link switches on every `BOOK YOUR ACTIVITY` and `RESERVE NOW` button on the
+page, which then open the Calendly popup.
 
 ```ts
 export const booking = {
@@ -86,14 +83,12 @@ export const booking = {
 That is the only change required — no component edits, no packages to install,
 no API key.
 
-While `calendlyUrl` is `""` the buttons scroll to the contact section, the
-calendar shows a prompt with a booking button, and no Calendly script or cookie
-is loaded at all.
+While `calendlyUrl` is `""` the buttons scroll to the footer instead, and no
+Calendly script or cookie is loaded at all.
 
-Calendly is fetched on the first click, or when the calendar section nears the
-viewport — never at page load — so visitors who never book never download it.
-Note that once it does load, Calendly sets third-party cookies — worth a cookie
-notice if that matters for your audience.
+Calendly is fetched on the first click, never at page load, so visitors who
+never book never download it. Note that once it does load, Calendly sets
+third-party cookies — worth a cookie notice if that matters for your audience.
 
 ### Social profile links
 
@@ -106,18 +101,14 @@ socials: [
 ],
 ```
 
-### Website URL
-
-The contact section shows a globe icon with nothing beside it, matching the
-mockup. Set `contact.website` to fill it in.
-
 ## Layout notes
 
 A few details that aren't obvious from reading the components:
 
 - **Scroll reveals.** [`Reveal.tsx`](src/components/Reveal.tsx) fades and lifts
   a block into place the first time it scrolls into view, with a `delay` prop
-  for staggering neighbours (the four workshop tiles, the five steps). The
+  for staggering neighbours (the four workshop tiles, the five steps, the hero
+  photo behind its heading). The
   hidden starting state is scoped to a `js` class that `layout.tsx` sets before
   first paint, so with JavaScript off the content is simply visible rather than
   stranded at opacity 0. `prefers-reduced-motion` is handled the same way in
@@ -134,7 +125,7 @@ A few details that aren't obvious from reading the components:
 - **The circle in "Events we do"** is sized off the dark card's height
   (`absolute` + `h-full` + `aspect-square`) rather than off the column width,
   which is what keeps the two flush top and bottom at every width.
-- **The torn paper edges** in About and Contact are generated in
+- **The torn paper edge** on the About card is generated in
   [`TornEdge.tsx`](src/components/TornEdge.tsx) from layered sine waves, frayed
   by an SVG turbulence filter. No image assets involved.
 - **The thin floral strips** between sections are `FloralBand`, standing in for

@@ -1,7 +1,12 @@
 import BookingLink from "@/components/BookingLink";
 import Reveal from "@/components/Reveal";
-import { FacebookIcon, InstagramIcon } from "@/components/Icons";
-import { brand, footer, nav } from "@/content/site";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  MailIcon,
+  PhoneIcon,
+} from "@/components/Icons";
+import { brand, contact, footer, nav } from "@/content/site";
 
 const SOCIAL_ICONS = {
   Instagram: InstagramIcon,
@@ -14,7 +19,8 @@ export default function Footer() {
   const columns = [nav.links.slice(0, half), nav.links.slice(half)];
 
   return (
-    <footer className="bg-pink">
+    // #contact lands here now that the standalone contact card is gone.
+    <footer id="contact" className="bg-pink">
       <div className="mx-auto max-w-[1240px] px-6 py-14 md:px-10 md:py-16">
         <Reveal>
           {/* Three panels split by hairlines, the way the reference footer
@@ -65,6 +71,26 @@ export default function Footer() {
               <p className="font-serif text-xl leading-snug text-foreground">
                 {footer.note}
               </p>
+              <ul className="mt-5 space-y-2 md:flex md:flex-col md:items-end">
+                <li>
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="inline-flex items-center gap-2.5 text-sm text-foreground/80 transition-colors hover:text-rust"
+                  >
+                    <MailIcon className="h-4 w-4 text-rust" />
+                    {contact.email}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`tel:${contact.phone.replace(/\s+/g, "")}`}
+                    className="inline-flex items-center gap-2.5 text-sm text-foreground/80 transition-colors hover:text-rust"
+                  >
+                    <PhoneIcon className="h-4 w-4 text-rust" />
+                    {contact.phone}
+                  </a>
+                </li>
+              </ul>
               <BookingLink className="mt-6 inline-block bg-charcoal px-8 py-4 text-[11px] font-semibold tracking-[0.18em] text-cream uppercase transition-colors hover:bg-foreground">
                 {footer.cta}
               </BookingLink>

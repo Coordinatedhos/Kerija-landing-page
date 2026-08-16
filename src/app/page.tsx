@@ -9,8 +9,6 @@ import HowItWorks from "@/components/HowItWorks";
 import EventsWeDo from "@/components/EventsWeDo";
 import Personalised from "@/components/Personalised";
 import PlanExperience from "@/components/PlanExperience";
-import Schedule from "@/components/Schedule";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -31,8 +29,6 @@ export default function Home() {
         <Personalised />
         <FloralBand />
         <PlanExperience />
-        <Schedule />
-        <Contact />
       </main>
       <Footer />
     </>

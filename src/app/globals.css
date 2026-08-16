@@ -7,6 +7,8 @@
   --brand-paper: #fbf7ed;
   --brand-ink: #1a1d21;
   --brand-slate: #1e2429;
+  /* Slightly warmer, lighter dark used by the full-width dark bands. */
+  --brand-charcoal: #2b2b2b;
   --brand-pink: #f0c7b8;
   --brand-rust: #a9603f;
   --brand-foreground: #1a1a1a;
@@ -19,12 +21,14 @@
   --color-paper: var(--brand-paper);
   --color-ink: var(--brand-ink);
   --color-slate: var(--brand-slate);
+  --color-charcoal: var(--brand-charcoal);
   --color-pink: var(--brand-pink);
   --color-rust: var(--brand-rust);
   --color-foreground: var(--brand-foreground);
   --color-muted: var(--brand-muted);
   --font-serif: var(--font-serif);
   --font-sans: var(--font-sans);
+  --font-script: var(--font-script);
 }
 
 html {
@@ -41,8 +45,9 @@ body {
   color: var(--brand-foreground);
 }
 
-/* Ticker in the top bar. The track holds two identical copies of the phrase
-   list, so shifting by half its width loops seamlessly. */
+/* Scrolling text, used wherever a line is longer than the space it sits in.
+   The track holds two identical copies of the list, so shifting by half its
+   width loops seamlessly. Speed comes from the element's --marquee-duration. */
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -53,7 +58,7 @@ body {
 }
 
 .marquee-track {
-  animation: marquee 45s linear infinite;
+  animation: marquee var(--marquee-duration, 45s) linear infinite;
 }
 
 /* Speckled fibres of the handmade paper the mockup uses for text cards. */
@@ -75,7 +80,13 @@ body {
     scroll-behavior: auto;
   }
 
+  /* Hold the line still, but let it be scrolled by hand so nothing is
+     unreachable — some of these lines are longer than any viewport. */
   .marquee-track {
     animation: none;
+  }
+
+  .marquee-viewport {
+    overflow-x: auto;
   }
 }

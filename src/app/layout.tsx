@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Jost } from "next/font/google";
+import { Playfair_Display, Jost, Great_Vibes } from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -9,6 +9,13 @@ const playfair = Playfair_Display({
 
 const jost = Jost({
   variable: "--font-sans",
+  subsets: ["latin"],
+});
+
+// Only the step numerals in "How it works" are set in script.
+const greatVibes = Great_Vibes({
+  variable: "--font-script",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -26,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${jost.variable} h-full antialiased`}
+      className={`${playfair.variable} ${jost.variable} ${greatVibes.variable} h-full antialiased`}
     >
       <body
         className="min-h-full flex flex-col bg-background text-foreground font-sans"

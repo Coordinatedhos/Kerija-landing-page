@@ -4,7 +4,12 @@ import NavBar from "@/components/NavBar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Workshops from "@/components/Workshops";
-import Events from "@/components/Events";
+import FloralBand from "@/components/FloralBand";
+import HowItWorks from "@/components/HowItWorks";
+import EventsWeDo from "@/components/EventsWeDo";
+import Personalised from "@/components/Personalised";
+import Enquiry from "@/components/Enquiry";
+import Schedule from "@/components/Schedule";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -20,7 +25,13 @@ export default function Home() {
         <Hero />
         <About />
         <Workshops />
-        <Events />
+        <FloralBand />
+        <HowItWorks />
+        <EventsWeDo />
+        <Personalised />
+        <FloralBand />
+        <Enquiry />
+        <Schedule />
         <Contact />
       </main>
       <Footer />

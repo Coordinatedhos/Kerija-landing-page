@@ -2,51 +2,7 @@
 
 import { useRef, type MouseEvent, type ReactNode } from "react";
 import { booking } from "@/content/site";
-
-const CALENDLY_CSS = "https://assets.calendly.com/assets/external/widget.css";
-const CALENDLY_JS = "https://assets.calendly.com/assets/external/widget.js";
-
-declare global {
-  interface Window {
-    Calendly?: {
-      initPopupWidget: (options: { url: string }) => void;
-    };
-  }
-}
-
-/**
- * Fetched on the first click rather than on page load, so visitors who never
- * book never pay for the script and never get Calendly's cookies. Module-level
- * so several buttons share one download.
- */
-let loader: Promise<void> | null = null;
-
-function loadCalendly(): Promise<void> {
-  if (window.Calendly) return Promise.resolve();
-  if (loader) return loader;
-
-  loader = new Promise<void>((resolve, reject) => {
-    if (!document.querySelector(`link[href="${CALENDLY_CSS}"]`)) {
-      const link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.href = CALENDLY_CSS;
-      document.head.appendChild(link);
-    }
-
-    const script = document.createElement("script");
-    script.src = CALENDLY_JS;
-    script.async = true;
-    script.onload = () => resolve();
-    script.onerror = () => {
-      // Allow a later click to retry instead of failing forever.
-      loader = null;
-      reject(new Error("Calendly widget failed to load"));
-    };
-    document.body.appendChild(script);
-  });
-
-  return loader;
-}
+import { loadCalendly } from "@/lib/calendly";
 
 export default function BookingLink({
   className,

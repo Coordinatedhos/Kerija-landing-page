@@ -1,27 +1,33 @@
-import Image from "next/image";
+import Photo from "@/components/Photo";
 import { workshops } from "@/content/site";
 
 export default function Workshops() {
   return (
-    <section id="workshops" className="bg-cream py-16 md:py-20">
-      <div className="mx-auto max-w-[1240px] px-4 md:px-8">
-        <h2 className="text-center font-serif text-3xl tracking-[0.01em] text-foreground sm:text-4xl lg:text-5xl">
+    <section id="workshops" className="bg-cream">
+      <div className="mx-auto max-w-[1240px] px-4 py-14 md:px-8 md:py-16">
+        <h2 className="text-center font-serif text-3xl tracking-[0.02em] text-foreground sm:text-4xl lg:text-[2.6rem]">
           {workshops.heading}
         </h2>
 
-        <ul className="mt-12 grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-4">
+        <ul className="mt-10 grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-4">
           {workshops.items.map((item) => (
-            <li key={item.src} className="relative aspect-[2/3] w-full">
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                sizes="(min-width: 1024px) 25vw, 50vw"
-                className="object-cover"
-              />
+            <li key={item.alt} className="relative aspect-[2/3] w-full">
+              <Photo photo={item} sizes="(min-width: 1024px) 25vw, 50vw" />
             </li>
           ))}
         </ul>
+
+        {/* As in About, the mockup runs these paragraphs together with no gap. */}
+        <div className="mt-10">
+          {workshops.body.map((paragraph) => (
+            <p
+              key={paragraph}
+              className="font-serif text-lg leading-[1.5] text-foreground sm:text-xl lg:text-[1.5rem]"
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </div>
     </section>
   );

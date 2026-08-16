@@ -2,8 +2,14 @@
  * All site copy and image paths, transcribed from the design mockups.
  *
  * Photos live in /public/images/ and are referenced only from here, so swapping
- * one is a single-line change with no component edits.
+ * one is a single-line change with no component edits. A photo with an empty
+ * `src` renders as a blush placeholder panel rather than a broken image.
  */
+
+export type Photo = {
+  src: string;
+  alt: string;
+};
 
 export const brand = {
   name: "BLOOM STUDIO",
@@ -15,7 +21,8 @@ export const booking = {
    * TODO: paste the Calendly scheduling link here, e.g.
    * "https://calendly.com/bloomstudio/workshop".
    * While this is empty the booking buttons simply scroll to the contact
-   * section, and no Calendly script or cookie is loaded.
+   * section, the calendar shows a booking prompt instead of the Calendly
+   * embed, and no Calendly script or cookie is loaded.
    */
   calendlyUrl: "",
   /** Where booking buttons point when Calendly isn't configured yet. */
@@ -123,15 +130,150 @@ export const workshops = {
       alt: "A jewelled owl keyring resting on an open hand",
     },
   ],
-};
-
-export const events = {
   body: [
     "Creative workshops for every age and occasion, personalized to fit your event and guests.",
     "Create your own handmade pieces — from bracelets, earrings, candles, and keychains to custom city photo magnets and more.",
     "No artistic experience needed — just bring your creativity and enjoy making something unique.",
   ],
-  band: {
+};
+
+/** The thin floral strip that separates the stacked cards in the mockup. */
+export const band = {
+  src: "/images/flowers.jpg",
+  alt: "",
+};
+
+export const howItWorks = {
+  heading: "HOW IT WORKS",
+  steps: [
+    {
+      title: "Tell Us About Your Event",
+      body: "Every event is different, so we create each workshop especially for you.",
+    },
+    {
+      title: "We Personalise Your Workshop",
+      body: "Based on your event, age group, number of guests and preferences, we'll suggest the most suitable creative activity.",
+    },
+    {
+      title: "Receive Your Personalised Offer",
+      body: "Once we know the details of your event, we'll prepare an individual offer for you, including the workshop, materials, duration and price.",
+    },
+    {
+      title: "Confirm Your Booking",
+      body: "Love the idea? Simply confirm your offer and we'll take care of the preparation.",
+    },
+    {
+      title: "Create & Enjoy",
+      body: "We bring everything needed for the workshop. Your guests can relax, create, have fun and take home something they made themselves.",
+    },
+  ],
+};
+
+export const eventsWeDo = {
+  heading: "EVENTS WE DO",
+  body: [
+    "Whatever you're celebrating, we'll create a hands-on workshop that fits your event, your guests and your vision.",
+    "From little birthday celebrations to team events and unforgettable bridal showers, Bloom Studio brings people together through creativity.",
+  ],
+  photo: {
+    // TODO: add the photo — see the table in README.md.
+    src: "",
+    alt: "Guests painting together around a picnic blanket in a park",
+  } satisfies Photo,
+  /** Far too long for one line, so the strip scrolls through the whole list. */
+  types: [
+    "Birthday Parties",
+    "Children's Parties",
+    "Kids' Celebrations",
+    "Bridal Showers",
+    "Bachelorette Parties",
+    "Corporate Events",
+    "Team Building",
+    "Festivals",
+    "School Events",
+    "Seasonal Events",
+    "Baby Showers",
+    "Creative Workshops",
+    "Special Events & Activations",
+    "Custom Events",
+  ],
+};
+
+export const personalised = {
+  heading: "EVERY EVENT IS DIFFERENT.",
+  subheading: "So why should the workshop be the same?",
+  body: "We personalise each experience based on your event, number of guests, age group, location and preferences.",
+  photos: {
+    brushes: {
+      // TODO: add the photo — see the table in README.md.
+      src: "",
+      alt: "Hands holding up wooden hairbrushes painted with flowers and ribbons",
+    } satisfies Photo,
+    children: {
+      // TODO: add the photo — see the table in README.md.
+      src: "",
+      alt: "Two children decorating wooden pieces at an outdoor table",
+    } satisfies Photo,
+    supplies: {
+      // TODO: add the photo — see the table in README.md.
+      src: "",
+      alt: "Boxes of marker pens, ribbons and craft supplies laid out on a table",
+    } satisfies Photo,
+  },
+  consider: {
+    heading: "WHAT WE CONSIDER",
+    items: [
+      {
+        // The mockup's first bullet has no emoji, most likely a font fallback
+        // in the export rather than a choice — this keeps the set consistent.
+        icon: "👥",
+        label: "Number of guests",
+        body: "Small gathering or large group — we adapt the workshop to your group.",
+      },
+      {
+        icon: "🎨",
+        label: "Type of event",
+        body: "Children, adults, corporate, private or something completely unique.",
+      },
+      {
+        icon: "✨",
+        label: "Your preferences",
+        body: "Choose an activity, theme, colours or let us suggest something for you.",
+      },
+      {
+        icon: "📍",
+        label: "Location & setup",
+        body: "We can discuss the space, setup and practical details for your event.",
+      },
+    ],
+  },
+};
+
+export const enquiry = {
+  // The mockup repeats "WHAT WE CONSIDER" here; it reads like a slip for
+  // something along the lines of "WHAT WE NEED FROM YOU". Change it here.
+  heading: "WHAT WE CONSIDER",
+  items: [
+    "Name",
+    "Email/phone",
+    "Event type",
+    "Date",
+    "Location",
+    "Number of guests",
+  ],
+  photo: {
+    // TODO: add the photo — see the table in README.md.
+    src: "",
+    alt: "Hand-painted fans laid out with colouring pencils and paint palettes",
+  } satisfies Photo,
+};
+
+export const schedule = {
+  /** Screen-reader heading only; the mockup shows the calendar on its own. */
+  heading: "Book a date",
+  prompt: "Pick a date that suits you.",
+  cta: "BOOK YOUR ACTIVITY",
+  background: {
     src: "/images/flowers.jpg",
     alt: "",
   },

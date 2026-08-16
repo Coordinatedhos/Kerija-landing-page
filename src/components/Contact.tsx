@@ -3,18 +3,19 @@ import { GlobeIcon, MailIcon, PhoneIcon } from "@/components/Icons";
 import { contact } from "@/content/site";
 
 export default function Contact() {
+  // Email, then phone, then website — the order the mockup lists them in.
   const rows = [
-    {
-      key: "phone",
-      Icon: PhoneIcon,
-      value: contact.phone,
-      href: `tel:${contact.phone.replace(/\s+/g, "")}`,
-    },
     {
       key: "email",
       Icon: MailIcon,
       value: contact.email,
       href: `mailto:${contact.email}`,
+    },
+    {
+      key: "phone",
+      Icon: PhoneIcon,
+      value: contact.phone,
+      href: `tel:${contact.phone.replace(/\s+/g, "")}`,
     },
     {
       key: "website",

@@ -28,7 +28,10 @@ export default function Personalised() {
 
         {/* Flush against the block above on desktop, as the mockup stacks them. */}
         <div className="mt-10 grid items-center gap-8 lg:mt-2 lg:grid-cols-12 lg:gap-0">
-          {/* Two photos stacked and offset, as the mockup collages them. */}
+          {/* Two halves of the same workshop photo, stacked and offset the way
+              the mockup collages them: the children above, the table of
+              supplies below. Each aspect matches its file, so nothing is
+              trimmed again here. */}
           <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1">
             <div className="relative aspect-[4/3] w-[70%]">
               <Photo
@@ -36,7 +39,7 @@ export default function Personalised() {
                 sizes="(min-width: 1024px) 29vw, 70vw"
               />
             </div>
-            <div className="relative -mt-1 aspect-[16/9] w-full">
+            <div className="relative -mt-1 aspect-[32/9] w-full">
               <Photo
                 photo={personalised.photos.supplies}
                 sizes="(min-width: 1024px) 42vw, 100vw"

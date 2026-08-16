@@ -1,12 +1,24 @@
+import fs from "node:fs";
+import path from "node:path";
 import Image from "next/image";
 import type { Photo as PhotoContent } from "@/content/site";
 
 /**
+ * Checked at build time — this is a server component on a statically rendered
+ * page — so a slot whose photo has not been dropped into public/images/ yet
+ * falls back to the placeholder rather than shipping a broken image.
+ */
+function isMissing(src: string) {
+  if (!src) return true;
+  if (!src.startsWith("/")) return false; // remote URL: nothing to check
+  return !fs.existsSync(path.join(process.cwd(), "public", src));
+}
+
+/**
  * A photo slot. Fills its (positioned) parent.
  *
- * Slots whose `src` is still empty in site.ts render a blush panel with a small
- * flower mark instead of a broken image, so the layout is already final and
- * dropping the real photo in is a one-line change.
+ * Empty slots render a blush panel with a small flower mark, so the layout is
+ * already final and adding the photo is a one-line change in site.ts.
  */
 export default function Photo({
   photo,
@@ -20,7 +32,7 @@ export default function Photo({
   className?: string;
 }) {
   // Opaque, or a slot that overlaps another block shows straight through it.
-  if (!photo.src) {
+  if (isMissing(photo.src)) {
     return (
       <div
         aria-hidden="true"
@@ -46,6 +58,7 @@ export default function Photo({
       fill
       priority={priority}
       sizes={sizes}
+      style={photo.position ? { objectPosition: photo.position } : undefined}
       className={`object-cover ${className}`}
     />
   );

@@ -9,6 +9,8 @@
 export type Photo = {
   src: string;
   alt: string;
+  /** object-position, where the mockup crops to something other than centre. */
+  position?: string;
 };
 
 export const brand = {
@@ -176,9 +178,10 @@ export const eventsWeDo = {
     "From little birthday celebrations to team events and unforgettable bridal showers, Bloom Studio brings people together through creativity.",
   ],
   photo: {
-    // TODO: add the photo — see the table in README.md.
-    src: "",
-    alt: "Guests painting together around a picnic blanket in a park",
+    src: "/images/events-picnic.jpg",
+    alt: "Guests painting pots and sharing food on picnic blankets under trees in a park",
+    // Portrait photo in a circle — bias up to keep the group, not the foreground.
+    position: "center 32%",
   } satisfies Photo,
   /** Far too long for one line, so the strip scrolls through the whole list. */
   types: [
@@ -203,21 +206,22 @@ export const personalised = {
   heading: "EVERY EVENT IS DIFFERENT.",
   subheading: "So why should the workshop be the same?",
   body: "We personalise each experience based on your event, number of guests, age group, location and preferences.",
+  // The mockup cuts one photo of the children's workshop into two tiles: the
+  // children above, the table of supplies below. Both are cut from the same
+  // original, so each tile has its own file rather than one file cropped by
+  // object-fit, which can only ever trim a single axis.
   photos: {
     brushes: {
-      // TODO: add the photo — see the table in README.md.
-      src: "",
-      alt: "Hands holding up wooden hairbrushes painted with flowers and ribbons",
+      src: "/images/brushes-circle.jpg",
+      alt: "A circle of hands holding up bamboo hairbrushes hand-painted with flowers, names and lace bows",
     } satisfies Photo,
     children: {
-      // TODO: add the photo — see the table in README.md.
-      src: "",
-      alt: "Two children decorating wooden pieces at an outdoor table",
+      src: "/images/kids-children.jpg",
+      alt: "Children decorating wooden keyrings with paint pens at an outdoor table",
     } satisfies Photo,
     supplies: {
-      // TODO: add the photo — see the table in README.md.
-      src: "",
-      alt: "Boxes of marker pens, ribbons and craft supplies laid out on a table",
+      src: "/images/kids-supplies.jpg",
+      alt: "Cases of acrylic paint pens and a box of beads, ribbons and findings on the workshop table",
     } satisfies Photo,
   },
   consider: {
@@ -262,9 +266,9 @@ export const enquiry = {
     "Number of guests",
   ],
   photo: {
-    // TODO: add the photo — see the table in README.md.
-    src: "",
-    alt: "Hand-painted fans laid out with colouring pencils and paint palettes",
+    src: "/images/fans-pencils.jpg",
+    alt: "Hand-painted folding fans on a table with tins of colouring pencils, watercolour palettes and brushes",
+    position: "center 38%",
   } satisfies Photo,
 };
 

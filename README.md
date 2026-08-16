@@ -38,19 +38,26 @@ components for copy, photos, links, or contact details.
 
 ### Photos
 
-Five slots have no photo yet. Each renders as a plain blush panel with a small
-flower mark rather than a broken image, so the layout is already final — drop a
-file into `public/images/` and point the matching `src` at it.
+Every slot is filled. If a file is ever removed or renamed the slot falls back
+to a blush placeholder panel rather than a broken image —
+[`Photo.tsx`](src/components/Photo.tsx) checks at build time whether each file
+is actually there.
 
-| Slot | `site.ts` key | Subject in the mockup |
+| File | Photo | Used by |
 | --- | --- | --- |
-| Events we do, circle | `eventsWeDo.photo` | Guests painting around a picnic blanket in a park |
-| Every event is different | `personalised.photos.brushes` | Hands holding up painted wooden hairbrushes |
-| Collage, upper | `personalised.photos.children` | Two children decorating wooden pieces outdoors |
-| Collage, lower | `personalised.photos.supplies` | Boxes of markers, ribbons and craft supplies |
-| Enquiry section | `enquiry.photo` | Painted fans with colouring pencils and paints |
+| `events-picnic.jpg` | Guests painting on picnic blankets in the park | Circle in "Events we do" |
+| `brushes-circle.jpg` | Circle of hands holding painted hairbrushes | "Every event is different" |
+| `kids-children.jpg` | The three children decorating keyrings | Collage, upper tile |
+| `kids-supplies.jpg` | Paint pens and the box of beads and ribbons | Collage, lower tile |
+| `fans-pencils.jpg` | Painted fans with pencil tins and paint palettes | Enquiry section |
 
-Photos already in place:
+The two `kids-*` files are cut from one original photo, the way the mockup cuts
+it: the children above, the table of supplies below. They are separate files
+because `object-fit` can only ever crop one axis, and these two crops differ on
+both — the upper tile is a zoom on the children, the lower a wide strip of the
+table. Each file is already the tile's aspect ratio, so nothing is trimmed twice.
+
+Photos in place from earlier:
 
 | Slot | Current file | Notes |
 | --- | --- | --- |

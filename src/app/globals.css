@@ -75,10 +75,11 @@ body {
     46px 64px;
 }
 
-/* Scroll reveal. Only armed once the inline script in layout.tsx has confirmed
-   JavaScript is running, so without it the content is plainly visible instead
-   of stranded at opacity 0. */
-.js .reveal {
+/* Scroll reveal. Hidden from the very first paint, which is the whole point:
+   waiting for JavaScript to add a marker class meant the content painted
+   visible first and then snapped away, so nothing above the fold ever looked
+   animated. The noscript override in layout.tsx covers JavaScript being off. */
+.reveal {
   opacity: 0;
   transform: translateY(26px);
   transition:
@@ -86,7 +87,7 @@ body {
     transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.js .reveal.is-visible {
+.reveal.is-visible {
   opacity: 1;
   transform: none;
 }
@@ -96,7 +97,7 @@ body {
     scroll-behavior: auto;
   }
 
-  .js .reveal {
+  .reveal {
     opacity: 1;
     transform: none;
     transition: none;

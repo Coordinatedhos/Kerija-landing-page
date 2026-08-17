@@ -42,14 +42,16 @@ export default function Hero() {
             className="relative z-10 lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:mt-16 lg:-mb-28"
             delay={120}
           >
-            <div className="relative aspect-[4/5] w-full lg:aspect-[5/6]">
+            <div className="relative aspect-[4/3] w-full lg:aspect-[5/6]">
               <Image
                 src={hero.photo.src}
                 alt={hero.photo.alt}
                 fill
                 priority
                 sizes="(min-width: 1024px) 58vw, 100vw"
-                className="object-cover"
+                // Shorter on phones crops a portrait photo hard, so sit the
+                // frame low enough to keep the mushroom pot in it.
+                className="object-cover object-[center_62%] lg:object-center"
               />
             </div>
           </Reveal>

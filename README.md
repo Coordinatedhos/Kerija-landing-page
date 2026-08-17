@@ -108,11 +108,13 @@ A few details that aren't obvious from reading the components:
 - **Scroll reveals.** [`Reveal.tsx`](src/components/Reveal.tsx) fades and lifts
   a block into place the first time it scrolls into view, with a `delay` prop
   for staggering neighbours (the four workshop tiles, the five steps, the hero
-  photo behind its heading). The
-  hidden starting state is scoped to a `js` class that `layout.tsx` sets before
-  first paint, so with JavaScript off the content is simply visible rather than
-  stranded at opacity 0. `prefers-reduced-motion` is handled the same way in
-  `globals.css`, which is why `Reveal` has no check for it.
+  photo behind its heading). The hidden starting state is plain CSS, applied
+  from the very first paint — an earlier version waited for JavaScript to add a
+  marker class, which meant content painted visible and then snapped away, so
+  nothing above the fold ever looked animated. A `<noscript>` override in
+  `layout.tsx` shows everything when JavaScript is off, and
+  `prefers-reduced-motion` is handled the same way in `globals.css`, which is
+  why `Reveal` has no check for it.
 - **Scrolling text.** [`Ticker.tsx`](src/components/Ticker.tsx) is used wherever
   a line is longer than the space it has — the top bar, and the list of event
   types under "Events we do", which is far too long to fit at any width. It

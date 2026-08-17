@@ -9,7 +9,7 @@ export default function Personalised() {
         <Reveal>
           <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-6">
             <div className="text-center lg:col-span-5 lg:col-start-1">
-              <h2 className="font-serif text-[1.9rem] leading-tight font-bold text-foreground sm:text-4xl">
+              <h2 className="font-serif text-[1.9rem] leading-tight text-foreground sm:text-4xl">
                 {personalised.heading}
               </h2>
               <p className="mt-2 font-serif text-lg text-foreground sm:text-xl">
@@ -22,7 +22,7 @@ export default function Personalised() {
 
             {/* z-10 so this photo covers the top corner of the card below it,
               which is how the mockup tucks the two together. */}
-            <div className="relative z-10 aspect-[9/8] w-full lg:col-span-7 lg:col-start-6">
+            <div className="relative z-10 aspect-[3/2] w-full lg:col-span-7 lg:col-start-6 lg:aspect-[9/8]">
               <Photo
                 photo={personalised.photos.brushes}
                 sizes="(min-width: 1024px) 58vw, 100vw"
@@ -39,7 +39,7 @@ export default function Personalised() {
               its bottom edge, the lower to its top — which keeps the join
               seamless while stopping the pair from swallowing the screen. */}
             <div className="lg:col-span-6 lg:col-start-1 lg:row-start-1">
-              <div className="relative aspect-[5/2] w-full lg:aspect-[4/3] lg:w-[64%]">
+              <div className="relative aspect-[3/2] w-full lg:aspect-[4/3] lg:w-[64%]">
                 <Photo
                   photo={personalised.photos.children}
                   sizes="(min-width: 1024px) 32vw, 100vw"

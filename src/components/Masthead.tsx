@@ -1,18 +1,24 @@
-import { brand, masthead } from "@/content/site";
+import type { Content } from "@/content";
 
-export default function Masthead() {
+export default function Masthead({
+  brand,
+  copy,
+}: {
+  brand: Content["brand"];
+  copy: Content["masthead"];
+}) {
   return (
     <div className="bg-cream">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-8 px-6 py-8 text-center md:grid-cols-[1fr_auto_1fr] md:gap-0 md:px-0 md:py-0">
         <div className="md:border-r md:border-rust/25 md:px-10 md:py-10">
           <p className="font-serif text-lg leading-snug text-foreground md:text-xl">
-            {masthead.left.question}
+            {copy.left.question}
           </p>
           <a
-            href={masthead.left.link.href}
+            href={copy.left.link.href}
             className="mt-3 inline-block text-[11px] font-semibold tracking-[0.08em] whitespace-pre text-foreground uppercase transition-colors hover:text-rust"
           >
-            {masthead.left.link.label}
+            {copy.left.link.label}
           </a>
         </div>
 
@@ -28,10 +34,10 @@ export default function Masthead() {
 
         <div className="md:border-l md:border-rust/25 md:px-10 md:py-10">
           <p className="font-serif text-lg leading-snug text-foreground md:text-xl">
-            {masthead.right.question}
+            {copy.right.question}
           </p>
           <p className="mt-3 text-[10px] font-semibold tracking-[0.04em] text-foreground uppercase">
-            {masthead.right.note}
+            {copy.right.note}
           </p>
         </div>
       </div>

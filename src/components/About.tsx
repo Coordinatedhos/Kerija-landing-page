@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import TornEdge from "@/components/TornEdge";
-import { about } from "@/content/site";
+import type { Content } from "@/content";
 
-export default function About() {
+export default function About({ copy }: { copy: Content["about"] }) {
   return (
     <section id="about" className="relative z-10 isolate">
       <Image
-        src={about.background.src}
-        alt={about.background.alt}
+        src={copy.background.src}
+        alt={copy.background.alt}
         fill
         sizes="100vw"
         className="-z-10 object-cover"
@@ -21,11 +21,11 @@ export default function About() {
           <div className="paper-texture px-6 pb-4 sm:px-12">
             <Reveal>
               <h2 className="font-serif text-4xl text-foreground sm:text-5xl">
-                {about.heading}
+                {copy.heading}
               </h2>
               {/* The mockup runs the paragraphs together with no gap between. */}
               <div className="mt-3">
-                {about.body.map((paragraph) => (
+                {copy.body.map((paragraph) => (
                   <p
                     key={paragraph}
                     className="font-serif text-lg leading-[1.55] text-foreground sm:text-xl lg:text-[1.55rem]"

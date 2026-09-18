@@ -1,16 +1,16 @@
 import Image from "next/image";
 import BookingLink from "@/components/BookingLink";
 import Reveal from "@/components/Reveal";
-import { hero } from "@/content/site";
+import type { Content } from "@/content";
 
-export default function Hero() {
+export default function Hero({ copy }: { copy: Content["hero"] }) {
   return (
     // z-20 keeps the photo above the About section it overhangs; no
     // overflow-hidden, or that overhang would be clipped off.
     <section id="home" className="relative z-20 isolate">
       <Image
-        src={hero.background.src}
-        alt={hero.background.alt}
+        src={copy.background.src}
+        alt={copy.background.alt}
         fill
         priority
         sizes="100vw"
@@ -24,13 +24,13 @@ export default function Hero() {
           <div className="bg-slate px-8 py-14 sm:px-12 lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:py-24 lg:pr-24">
             <Reveal>
               <h1 className="font-serif text-3xl leading-tight tracking-[0.02em] text-white sm:text-4xl lg:text-[2.9rem]">
-                {hero.heading}
+                {copy.heading}
               </h1>
               <p className="mt-8 max-w-md text-sm leading-relaxed text-muted">
-                {hero.body}
+                {copy.body}
               </p>
               <BookingLink className="mt-10 inline-block border border-white/70 px-9 py-4 text-[11px] font-semibold tracking-[0.12em] text-white uppercase transition-colors hover:bg-white hover:text-slate">
-                {hero.cta.label}
+                {copy.cta}
               </BookingLink>
             </Reveal>
           </div>
@@ -44,8 +44,8 @@ export default function Hero() {
           >
             <div className="relative aspect-[4/3] w-full lg:aspect-[5/6]">
               <Image
-                src={hero.photo.src}
-                alt={hero.photo.alt}
+                src={copy.photo.src}
+                alt={copy.photo.alt}
                 fill
                 priority
                 sizes="(min-width: 1024px) 58vw, 100vw"

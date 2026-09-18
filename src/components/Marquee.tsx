@@ -1,10 +1,10 @@
 import Ticker from "@/components/Ticker";
-import { marquee } from "@/content/site";
+import type { Content } from "@/content";
 
-export default function Marquee() {
+export default function Marquee({ copy }: { copy: Content["marquee"] }) {
   return (
     <Ticker
-      items={marquee.phrases}
+      items={copy.phrases}
       itemClassName="text-[10px] tracking-[0.12em] text-foreground/85 uppercase sm:text-[11px]"
       className="bg-blush py-2.5"
     />

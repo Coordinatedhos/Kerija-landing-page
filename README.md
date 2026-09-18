@@ -1,6 +1,7 @@
 # Bloom Studio
 
-One-page site for Bloom Studio — handmade creative workshops.
+One-page site for Bloom Studio — handmade creative workshops, in Latvian and
+English.
 
 Next.js 16 (App Router) · React 19 · Tailwind v4 · TypeScript. Deployed on Vercel
 from `main`; every push to `main` redeploys.
@@ -12,12 +13,44 @@ npm run build    # production build
 npm run lint
 ```
 
+## Languages
+
+| URL   | Language                      |
+| ----- | ----------------------------- |
+| `/`   | redirects to `/lv`            |
+| `/lv` | Latvian — the default         |
+| `/en` | English                       |
+
+Both are built as static pages. The **LV / EN** switch sits at the right-hand
+end of the dark nav bar, at every screen width, and each page carries
+`hreflang` tags pointing at the other one.
+
+To change which language the bare domain opens in, change `defaultLocale` in
+[`src/content/index.ts`](src/content/index.ts) — the redirect, the `x-default`
+tag and the switch all follow from it.
+
+To add a third language, copy `src/content/lv.ts` to e.g. `src/content/et.ts`,
+translate it, type it `Copy`, and add it to `locales` and `copy` in
+`src/content/index.ts`. Nothing else needs touching: the route, the switch and
+the tags are all generated from that list. A key you forget to translate is a
+build error, not a half-English page.
+
 ## Where to change things
 
-**Every piece of text and every image path lives in
-[`src/content/site.ts`](src/content/site.ts).** Editing that one file covers
-almost anything you'll want to change — you should not need to touch the
-components for copy, photos, links, or contact details.
+**Text lives in one file per language** —
+[`src/content/lv.ts`](src/content/lv.ts) and
+[`src/content/en.ts`](src/content/en.ts). Both files have the same shape, so a
+line in one has a twin in the other. That includes the alt text for every
+photo, since alt text is words too.
+
+**Photos, and everything else that is the same in both languages** — the
+brand name, the booking link, the phone number and email, the social links,
+where each nav link jumps to — live in
+[`src/content/site.ts`](src/content/site.ts).
+
+[`src/content/index.ts`](src/content/index.ts) puts the two together and hands
+the page one object per language. You shouldn't need to touch it or the
+components to change copy, photos, links, or contact details.
 
 ## Page order
 
@@ -70,8 +103,9 @@ Photos in place from earlier:
 
 ### Calendly booking link
 
-One link switches on every `BOOK YOUR ACTIVITY` and `RESERVE NOW` button on the
-page, which then open the Calendly popup.
+One link switches on every booking button on the page — `REZERVĒ SAVU
+AKTIVITĀTI` / `BOOK YOUR ACTIVITY` and `REZERVĒ TAGAD` / `RESERVE NOW`, in both
+languages — which then open the Calendly popup.
 
 ```ts
 export const booking = {
@@ -92,14 +126,22 @@ third-party cookies — worth a cookie notice if that matters for your audience.
 
 ### Social profile links
 
-Both are `"#"` in the `nav.socials` array:
+Both are `"#"` in the `socials` array in `site.ts`:
 
 ```ts
-socials: [
+export const socials = [
   { label: "Instagram", href: "#" }, // ← real profile URL
   { label: "Facebook", href: "#" },  // ← real profile URL
-],
+];
 ```
+
+### The site's own address
+
+The `canonical` and `hreflang` tags need an absolute URL. Vercel supplies the
+deployment's own domain, which is right for previews and fine for production
+until the real domain is in place — at that point set `NEXT_PUBLIC_SITE_URL`
+(e.g. `https://bloomstudio.lv`) in the Vercel project's environment variables.
+See [`src/lib/siteUrl.ts`](src/lib/siteUrl.ts).
 
 ## Layout notes
 
@@ -132,10 +174,16 @@ A few details that aren't obvious from reading the components:
   by an SVG turbulence filter. No image assets involved.
 - **The thin floral strips** between sections are `FloralBand`, standing in for
   the mockup's habit of laying cards over the background photo.
-- **Fonts**: Playfair Display for headings and body serif, Jost for the small
+- **Fonts**: Playfair Display for headings and body serif, Outfit for the small
   uppercase sans, and Great Vibes for script accents — the step numerals in
-  "How it works", "experience now" in the invitation band, and "Menu" in the
-  footer.
+  "How it works", the accent in the invitation band, and "Menu" in the footer.
+  All three are loaded with the `latin-ext` subset, which is what carries the
+  Latvian diacritics. The sans was Jost while the site was English only; Jost
+  is unusable in Latvian, because Chrome builds its `Ā` from a base letter in
+  one subset file and a macron in another and then loses the macron —
+  `SĀKUMS` came out as `SAKUMS`, `REZERVĒ TAGAD` as `REZERVE ‾TAGAD`. Outfit
+  is the same geometric sans in feel and sets Latvian correctly. Worth
+  re-checking with a Latvian string if the sans is ever swapped again.
 - **The invitation band and footer** take their structure from
   glamhausdesignco.com: photo beside a light card with a centred headline and a
   dark CTA, and a three-panel footer split by hairlines. The palette, type and

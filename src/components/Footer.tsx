@@ -6,14 +6,24 @@ import {
   MailIcon,
   PhoneIcon,
 } from "@/components/Icons";
-import { brand, contact, footer, nav } from "@/content/site";
+import type { Content } from "@/content";
 
 const SOCIAL_ICONS = {
   Instagram: InstagramIcon,
   Facebook: FacebookIcon,
 } as const;
 
-export default function Footer() {
+export default function Footer({
+  brand,
+  contact,
+  copy,
+  nav,
+}: {
+  brand: Content["brand"];
+  contact: Content["contact"];
+  copy: Content["footer"];
+  nav: Content["nav"];
+}) {
   // Two even columns of links, in the order they appear in the nav.
   const half = Math.ceil(nav.links.length / 2);
   const columns = [nav.links.slice(0, half), nav.links.slice(half)];
@@ -28,13 +38,13 @@ export default function Footer() {
           <div className="grid gap-10 text-center md:grid-cols-3 md:gap-0 md:text-left">
             <div className="md:pr-10">
               <h2 className="font-script text-4xl leading-none text-foreground">
-                {footer.menuHeading}
+                {copy.menuHeading}
               </h2>
               <div className="mt-5 flex justify-center gap-10 md:justify-start md:gap-8">
                 {columns.map((column, index) => (
                   <ul key={index} className="space-y-2">
                     {column.map((link) => (
-                      <li key={link.label}>
+                      <li key={link.key}>
                         {link.booking ? (
                           <BookingLink className="text-[11px] tracking-[0.14em] text-foreground/80 uppercase transition-colors hover:text-rust">
                             {link.label}
@@ -69,7 +79,7 @@ export default function Footer() {
 
             <div className="md:pl-10 md:text-right">
               <p className="font-serif text-xl leading-snug text-foreground">
-                {footer.note}
+                {copy.note}
               </p>
               <ul className="mt-5 space-y-2 md:flex md:flex-col md:items-end">
                 <li>
@@ -92,7 +102,7 @@ export default function Footer() {
                 </li>
               </ul>
               <BookingLink className="mt-6 inline-block bg-charcoal px-8 py-4 text-[11px] font-semibold tracking-[0.18em] text-cream uppercase transition-colors hover:bg-foreground">
-                {footer.cta}
+                {copy.cta}
               </BookingLink>
             </div>
           </div>

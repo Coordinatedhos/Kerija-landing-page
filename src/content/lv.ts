@@ -103,7 +103,7 @@ export const lv = {
     steps: [
       {
         title: "Pastāsti par savu pasākumu",
-        body: "Katrs pasākums ir citāds, tāpēc katru darbnīcu veidojam īpaši tev.",
+        body: "Katrs pasākums ir unikāls, tāpēc katru darbnīcu veidojam īpaši tev.",
       },
       {
         title: "Mēs pielāgojam darbnīcu",

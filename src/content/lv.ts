@@ -75,7 +75,7 @@ export const lv = {
     body: [
       "Bloom Studio tic, ka radošums saved cilvēkus kopā. Mēs veidojam praktiskas radošās darbnīcas dzimšanas dienām, bērnu ballītēm, vecmeitu ballītēm, korporatīvajiem pasākumiem, festivāliem un privātām svinībām.",
       "Katra darbnīca tiek rūpīgi pielāgota tavam pasākumam, radot īpašu un neaizmirstamu pieredzi ikvienam viesim. Mākslinieciskas priekšzināšanas nav vajadzīgas — pietiek ar ziņkāri un prieku radīt kaut ko ar savām rokām.",
-      "Mēs nodrošinām materiālus, padomu un iedvesmu, lai ikviens varētu izbaudīt radošo procesu un paņemt mājās pašrocīgi darinātu darbu, kas piepildīts ar atmiņām.",
+      "Mēs nodrošinām materiālus, padomu un iedvesmu, lai ikviens varētu izbaudīt radošo procesu un paņemt mājās pašu rokām darinātu darbu, kas piepildīts ar atmiņām.",
     ],
   },
 

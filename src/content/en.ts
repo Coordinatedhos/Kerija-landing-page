@@ -100,7 +100,7 @@ export const en: Copy = {
     steps: [
       {
         title: "Tell Us About Your Event",
-        body: "Every event is different, so we create each workshop especially for you.",
+        body: "Every event is unique, so we create each workshop especially for you.",
       },
       {
         title: "We Personalise Your Workshop",

@@ -82,7 +82,8 @@ export const en: Copy = {
     body: [
       "Creative workshops for every age and occasion, personalized to fit your event and guests.",
       "Create your own handmade pieces — from bracelets, earrings, candles, and keychains to custom city photo magnets and more.",
-      "No artistic experience needed — just bring your creativity and enjoy making something unique.",
+      "No artistic experience needed — just bring inspiration and the wish to create.",
+      "Lose yourself in the process, enjoy the time together and make something truly unique!",
     ],
     alts: {
       fan: "A guest painting delicate flowers onto a folding fan",

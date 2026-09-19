@@ -154,7 +154,7 @@ export const lv = {
   },
 
   personalised: {
-    heading: "KATRS PASĀKUMS IR CITĀDS.",
+    heading: "KATRS PASĀKUMS IR UNIKĀLS.",
     subheading: "Kāpēc lai darbnīca būtu viena un tā pati?",
     body: "Katru pieredzi pielāgojam tavam pasākumam, viesu skaitam, vecuma grupai, norises vietai un vēlmēm.",
     alts: {

@@ -151,7 +151,7 @@ export const en: Copy = {
   },
 
   personalised: {
-    heading: "EVERY EVENT IS DIFFERENT.",
+    heading: "EVERY EVENT IS UNIQUE.",
     subheading: "So why should the workshop be the same?",
     body: "We personalise each experience based on your event, number of guests, age group, location and preferences.",
     alts: {

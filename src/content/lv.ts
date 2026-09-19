@@ -84,7 +84,8 @@ export const lv = {
     body: [
       "Radošās darbnīcas ikvienam vecumam un notikumam, pielāgotas tavam pasākumam un viesiem.",
       "Darini pats savus darbus — no aprocēm, auskariem, svecēm un atslēgu piekariņiem līdz personalizētiem pilsētas foto magnētiem un citām idejām.",
-      "Mākslinieciskas priekšzināšanas nav vajadzīgas — ņem līdzi radošumu un izbaudi kaut kā unikāla tapšanu.",
+      "Mākslinieciskas priekšzināšanas nav nepieciešamas — ņem līdzi iedvesmu un vēlmi radīt.",
+      "Ļaujies procesam, izbaudi kopābūšanu un radi ko patiesi unikālu!",
     ],
     alts: {
       fan: "Viese apglezno smalkus ziedus uz saliekamā vēdekļa",

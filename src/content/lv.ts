@@ -144,7 +144,7 @@ export const lv = {
       "Sezonas pasākumi",
       "Mazuļa gaidīšanas svinības",
       "Radošās darbnīcas",
-      "Īpaši pasākumi un aktivācijas",
+      "Īpaši pasākumi un aktivitātes",
       "Pasākumi pēc pasūtījuma",
     ],
     alts: {

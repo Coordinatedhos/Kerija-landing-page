@@ -96,10 +96,22 @@ Photos in place from earlier:
 | Hero photo                   | `hero-pots.jpg`               | Original                                                                                                                          |
 | Hero / About backdrop, bands | `flowers.jpg`                 | Cropped from the mockup screenshot — a higher-resolution original would sharpen the thin bands and the invitation band's backdrop |
 | Workshop tile 1              | `workshop-fan.jpg`            | Original                                                                                                                          |
-| Workshop tile 2              | `workshop-glasses.jpg`        | **277×378, recovered from the mockup screenshot — replace with the original when available**                                      |
+| Workshop tile 2              | `glass-hydrangea.jpg`         | Original. Replaced `workshop-glasses.jpg`, which was a 277×378 crop out of the mockup screenshot                                  |
 | Workshop tile 3              | `workshop-keychain-child.jpg` | Original                                                                                                                          |
 | Workshop tile 4              | `workshop-keychain-owl.jpg`   | Original                                                                                                                          |
 | "Plan your experience" inset | `workshop-keychain-bunny.jpg` | Original                                                                                                                          |
+
+### Photos sitting in the folder, unplaced
+
+Two more originals are in `public/images/` waiting for a slot — say where they
+should go and it is a one-line change in `site.ts`:
+
+| File                        | Photo                                                     |
+| --------------------------- | --------------------------------------------------------- |
+| `brushes-circle-indoors.jpg`| A second circle of painted hairbrushes, shot indoors       |
+| `wineglass-sunflowers.jpg`  | A wine glass hand-painted with sunflowers                  |
+
+`workshop-glasses.jpg` is also still there, now unused.
 
 ### Calendly booking link
 
@@ -170,8 +182,16 @@ A few details that aren't obvious from reading the components:
   (`absolute` + `h-full` + `aspect-square`) rather than off the column width,
   which is what keeps the two flush top and bottom at every width.
 - **The torn paper edge** on the About card is generated in
-  [`TornEdge.tsx`](src/components/TornEdge.tsx) from layered sine waves, frayed
-  by an SVG turbulence filter. No image assets involved.
+  [`TornEdge.tsx`](src/components/TornEdge.tsx) — no image assets involved. It
+  is built to match the torn sheet in the mockup: the tear runs as a long, slow
+  undulation, about 9% of the card's width from crest to trough (measured off
+  the mockup's own sheet), and the edge is combed into tufts whose length is
+  modulated by a slow envelope so the fibres clump rather than stand in even
+  stubble. Three combs are stacked, each finer and fainter than the last, so
+  the sheet thins out over a band instead of ending at a line; a turbulence
+  displacement frays each into fibres, and the tips run whiter than the sheet.
+  Between them the combs are about 1,500 points, most of that file's weight in
+  the served HTML — coarsen the steps before adding a fourth.
 - **The thin floral strips** between sections are `FloralBand`, standing in for
   the mockup's habit of laying cards over the background photo.
 - **Fonts**: Playfair Display for headings and body serif, Outfit for the small

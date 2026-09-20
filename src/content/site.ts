@@ -82,9 +82,7 @@ export const photos = {
   heroPots: { src: "/images/hero-pots.jpg" },
   workshops: {
     fan: { src: "/images/workshop-fan.jpg" },
-    // Recovered from the mockup screenshot, so this one is only 277x378.
-    // Swap in the original photo when it's available.
-    glasses: { src: "/images/workshop-glasses.jpg" },
+    glasses: { src: "/images/glass-hydrangea.jpg" },
     keychainChild: { src: "/images/workshop-keychain-child.jpg" },
     keychainOwl: { src: "/images/workshop-keychain-owl.jpg" },
   },

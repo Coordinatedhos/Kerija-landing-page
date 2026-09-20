@@ -88,7 +88,7 @@ export const en: Copy = {
     alts: {
       fan: "A guest painting delicate flowers onto a folding fan",
       glasses:
-        "Drinking glasses hand-painted with flowers, strawberries, and lemons, held against grass",
+        "A glass tumbler hand-painted with blue hydrangeas, with a bamboo lid and a metal straw",
       keychainChild:
         "A child holding a wooden keychain painted with a tulip and sun",
       keychainOwl: "A jewelled owl keyring resting on an open hand",
@@ -164,27 +164,14 @@ export const en: Copy = {
     },
     consider: {
       heading: "WHAT WE CONSIDER",
+      /** What to tell us when you write — the mockup's own list. */
       items: [
-        {
-          // No emoji on this one, as the mockup has it.
-          label: "Number of guests",
-          body: "Small gathering or large group — we adapt the workshop to your group.",
-        },
-        {
-          icon: "🎨",
-          label: "Type of event",
-          body: "Children, adults, corporate, private or something completely unique.",
-        },
-        {
-          icon: "✨",
-          label: "Your preferences",
-          body: "Choose an activity, theme, colours or let us suggest something for you.",
-        },
-        {
-          icon: "📍",
-          label: "Location & setup",
-          body: "We can discuss the space, setup and practical details for your event.",
-        },
+        "Name",
+        "Email / phone",
+        "Event type",
+        "Date",
+        "Location",
+        "Number of guests",
       ],
     },
   },

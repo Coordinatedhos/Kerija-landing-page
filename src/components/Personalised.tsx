@@ -58,27 +58,17 @@ export default function Personalised({
               </div>
             </div>
 
-            <div className="bg-cream px-7 py-10 sm:px-10 lg:col-span-6 lg:col-start-7 lg:row-start-1 lg:pt-16">
+            <div className="flex flex-col justify-center bg-cream px-7 py-10 sm:px-10 lg:col-span-6 lg:col-start-7 lg:row-start-1">
               <h2 className="text-center font-serif text-3xl tracking-[0.04em] text-foreground sm:text-4xl lg:text-[2.9rem] lg:leading-[1.15]">
                 {copy.consider.heading}
               </h2>
-              {/* One continuous block of lines, no gaps between the four — the
-                mockup runs them together at a single line height. */}
-              <dl className="mt-6 font-serif text-base leading-[1.5] text-foreground sm:text-lg">
+              {/* Bulleted and left-aligned, but the block itself sits centred
+                under the heading, as the mockup has it. */}
+              <ul className="mx-auto mt-7 w-fit list-disc space-y-1.5 pl-6 text-left font-serif text-base leading-[1.5] text-foreground sm:text-lg">
                 {copy.consider.items.map((item) => (
-                  <div key={item.label}>
-                    <dt>
-                      {item.icon ? (
-                        <span aria-hidden="true" className="mr-1.5">
-                          {item.icon}
-                        </span>
-                      ) : null}
-                      {item.label}
-                    </dt>
-                    <dd>{item.body}</dd>
-                  </div>
+                  <li key={item}>{item}</li>
                 ))}
-              </dl>
+              </ul>
             </div>
           </div>
         </Reveal>

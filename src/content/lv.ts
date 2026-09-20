@@ -90,7 +90,7 @@ export const lv = {
     alts: {
       fan: "Viese apglezno smalkus ziedus uz saliekamā vēdekļa",
       glasses:
-        "Ar rokām apgleznotas glāzes ar ziediem, zemenēm un citroniem, turētas pret zāli",
+        "Ar rokām apgleznota stikla glāze ar zilām hortenzijām, bambusa vāciņu un salmiņu",
       keychainChild:
         "Bērns tur koka atslēgu piekariņu, uz kura uzgleznota tulpe un saule",
       keychainOwl:
@@ -167,27 +167,14 @@ export const lv = {
     },
     consider: {
       heading: "KO MĒS ŅEMAM VĒRĀ",
+      /** What to tell us when you write — the mockup's own list. */
       items: [
-        {
-          // No emoji on this one, as the mockup has it.
-          label: "Viesu skaits",
-          body: "Neliels pulciņš vai liela grupa — darbnīcu pielāgojam tavai grupai.",
-        },
-        {
-          icon: "🎨",
-          label: "Pasākuma veids",
-          body: "Bērniem, pieaugušajiem, korporatīvs, privāts vai kas pavisam īpašs.",
-        },
-        {
-          icon: "✨",
-          label: "Tavas vēlmes",
-          body: "Izvēlies aktivitāti, tēmu un krāsas vai ļauj mums ieteikt savu ideju.",
-        },
-        {
-          icon: "📍",
-          label: "Vieta un iekārtojums",
-          body: "Pārrunāsim telpu, iekārtojumu un praktiskās detaļas tavam pasākumam.",
-        },
+        "Vārds",
+        "E-pasts / tālrunis",
+        "Pasākuma veids",
+        "Datums",
+        "Norises vieta",
+        "Viesu skaits",
       ],
     },
   },

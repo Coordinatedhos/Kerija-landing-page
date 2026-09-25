@@ -78,7 +78,7 @@ is actually there.
 | File                 | Photo                                            | Used by                     |
 | -------------------- | ------------------------------------------------ | --------------------------- |
 | `events-picnic.jpg`  | Guests painting on picnic blankets in the park   | Circle in "Events we do"    |
-| `brushes-circle.jpg` | Circle of hands holding painted hairbrushes      | "Every event is different"  |
+| `brushes-circle-indoors.jpg` | Circle of hands holding painted hairbrushes | "Every event is different" |
 | `kids-children.jpg`  | The three children decorating keyrings           | Collage, upper tile         |
 | `kids-supplies.jpg`  | Paint pens and the box of beads and ribbons      | Collage, lower tile         |
 | `fans-pencils.jpg`   | Painted fans with pencil tins and paint palettes | "Plan your experience" band |
@@ -96,22 +96,21 @@ Photos in place from earlier:
 | Hero photo                   | `hero-pots.jpg`               | Original                                                                                                                          |
 | Hero / About backdrop, bands | `flowers.jpg`                 | Cropped from the mockup screenshot — a higher-resolution original would sharpen the thin bands and the invitation band's backdrop |
 | Workshop tile 1              | `workshop-fan.jpg`            | Original                                                                                                                          |
-| Workshop tile 2              | `glass-hydrangea.jpg`         | Original. Replaced `workshop-glasses.jpg`, which was a 277×378 crop out of the mockup screenshot                                  |
+| Workshop tile 2              | `wineglass-sunflowers.jpg`    | Original. Replaced `workshop-glasses.jpg`, which was a 277×378 crop out of the mockup screenshot                                  |
 | Workshop tile 3              | `workshop-keychain-child.jpg` | Original                                                                                                                          |
 | Workshop tile 4              | `workshop-keychain-owl.jpg`   | Original                                                                                                                          |
 | "Plan your experience" inset | `workshop-keychain-bunny.jpg` | Original                                                                                                                          |
 
 ### Photos sitting in the folder, unplaced
 
-Two more originals are in `public/images/` waiting for a slot — say where they
+Three originals are in `public/images/` with no slot — say where any of them
 should go and it is a one-line change in `site.ts`:
 
-| File                        | Photo                                                     |
-| --------------------------- | --------------------------------------------------------- |
-| `brushes-circle-indoors.jpg`| A second circle of painted hairbrushes, shot indoors       |
-| `wineglass-sunflowers.jpg`  | A wine glass hand-painted with sunflowers                  |
-
-`workshop-glasses.jpg` is also still there, now unused.
+| File                    | Photo                                                    |
+| ----------------------- | -------------------------------------------------------- |
+| `glass-hydrangea.jpg`   | A glass tumbler painted with blue hydrangeas              |
+| `brushes-circle.jpg`    | The earlier circle of painted hairbrushes, shot outdoors  |
+| `workshop-glasses.jpg`  | The 277×378 crop recovered from the mockup screenshot     |
 
 ### Calendly booking link
 

@@ -82,7 +82,7 @@ export const photos = {
   heroPots: { src: "/images/hero-pots.jpg" },
   workshops: {
     fan: { src: "/images/workshop-fan.jpg" },
-    glasses: { src: "/images/glass-hydrangea.jpg" },
+    glasses: { src: "/images/wineglass-sunflowers.jpg" },
     keychainChild: { src: "/images/workshop-keychain-child.jpg" },
     keychainOwl: { src: "/images/workshop-keychain-owl.jpg" },
   },
@@ -91,7 +91,7 @@ export const photos = {
     // Portrait photo in a circle — bias up to keep the group, not the foreground.
     position: "center 32%",
   },
-  brushes: { src: "/images/brushes-circle.jpg" },
+  brushes: { src: "/images/brushes-circle-indoors.jpg" },
   // The mockup cuts one photo of the children's workshop into two tiles: the
   // children above, the table of supplies below. Both are cut from the same
   // original over the same horizontal span, so shown at one width they sit at

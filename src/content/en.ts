@@ -88,7 +88,7 @@ export const en: Copy = {
     alts: {
       fan: "A guest painting delicate flowers onto a folding fan",
       glasses:
-        "A glass tumbler hand-painted with blue hydrangeas, with a bamboo lid and a metal straw",
+        "A wine glass hand-painted with sunflowers, held up against the green of a garden",
       keychainChild:
         "A child holding a wooden keychain painted with a tulip and sun",
       keychainOwl: "A jewelled owl keyring resting on an open hand",
@@ -156,7 +156,7 @@ export const en: Copy = {
     body: "We personalise each experience based on your event, number of guests, age group, location and preferences.",
     alts: {
       brushes:
-        "A circle of hands holding up bamboo hairbrushes hand-painted with flowers, names and lace bows",
+        "A circle of hands holding bamboo hairbrushes hand-painted with suns, flowers, a whale and a swan",
       children:
         "Children decorating wooden keyrings with paint pens at an outdoor table",
       supplies:

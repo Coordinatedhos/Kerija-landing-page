@@ -90,7 +90,7 @@ export const lv = {
     alts: {
       fan: "Viese apglezno smalkus ziedus uz saliekamā vēdekļa",
       glasses:
-        "Ar rokām apgleznota stikla glāze ar zilām hortenzijām, bambusa vāciņu un salmiņu",
+        "Ar rokām apgleznota vīna glāze ar saulespuķēm, pacelta dārzā pret zaļumiem",
       keychainChild:
         "Bērns tur koka atslēgu piekariņu, uz kura uzgleznota tulpe un saule",
       keychainOwl:
@@ -159,7 +159,7 @@ export const lv = {
     body: "Katru pieredzi pielāgojam tavam pasākumam, viesu skaitam, vecuma grupai, norises vietai un vēlmēm.",
     alts: {
       brushes:
-        "Roku aplis, kas paceļ bambusa matu sukas, apgleznotas ar ziediem, vārdiem un mežģīņu bantēm",
+        "Roku aplis ar bambusa matu sukām, kas apgleznotas ar saulēm, ziediem, vali un gulbi",
       children:
         "Bērni pie āra galda rotā koka atslēgu piekariņus ar krāsu marķieriem",
       supplies:

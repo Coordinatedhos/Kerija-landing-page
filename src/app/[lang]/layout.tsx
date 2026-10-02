@@ -78,9 +78,16 @@ export default async function RootLayout({
       className={`${playfair.variable} ${outfit.variable} ${greatVibes.variable} h-full antialiased`}
     >
       <body
-        className="min-h-full flex flex-col bg-background text-foreground font-sans"
+        className="relative min-h-full flex flex-col bg-background text-foreground font-sans"
         suppressHydrationWarning
       >
+        {/* The floral wash runs the height of the page, and the sections with
+            a colour of their own are laid over it — which is how the mockup
+            works, and why the gaps between them line up. */}
+        <div
+          aria-hidden="true"
+          className="floral-backdrop pointer-events-none absolute inset-0 -z-10"
+        />
         {/* Scroll reveals start hidden; with no JavaScript to un-hide them,
             show everything instead. */}
         <noscript>

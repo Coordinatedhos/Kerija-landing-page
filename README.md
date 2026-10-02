@@ -205,13 +205,21 @@ A few details that aren't obvious from reading the components:
   [`globals.css`](src/app/globals.css): a mesh of soft radial gradients over a
   blush base. It replaced `flowers.jpg`, which was 1600×332 — the hero cropped
   that to its middle third and blew it up fourfold, so what reached the screen
-  was blurred and banded. The gradient's colours are sampled from the part of
-  that photo which was actually visible, on a 5×4 grid, each pushed away from
-  the mean so the modelling survives, with two faint diagonals standing in for
-  the brushes that ran across the original. Being colour rather than pixels it
-  is sharp at any size, costs no download, and doesn't care what shape the box
-  it fills is — which is why the same class serves both a tall hero and a 28px
-  strip.
+  was blurred and banded.
+
+  It is **one layer, the height of the page**, sitting behind everything in
+  `layout.tsx`, with the sections that have a colour of their own laid over
+  it. That is how the mockup works — cards on one photograph — and it is why
+  the wash never restarts at a section boundary and why the gaps between
+  cards line up. `FloralBand` is now just such a gap.
+
+  The colours are sampled from the part of the old photo that was actually
+  visible, each pushed away from the mean so the modelling survives, and
+  spread down the page in three passes so the colour keeps changing as you
+  scroll. Diagonals stand in for the brushes that ran across the original,
+  and a fine grain goes over the lot, because gradients on their own read as
+  plastic. Being colour rather than pixels it is sharp at any size and costs
+  no download.
 - **The thin floral strips** between sections are `FloralBand`, standing in for
   the mockup's habit of laying cards over the background photo. The dark
   "How it works" band has one on each side.

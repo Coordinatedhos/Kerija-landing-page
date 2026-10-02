@@ -90,7 +90,7 @@ export const en: Copy = {
       glasses:
         "A wine glass hand-painted with sunflowers, held up against the green of a garden",
       keychainChild:
-        "A child holding a wooden keychain painted with a tulip and sun",
+        "A glass tumbler hand-painted with blue hydrangeas, with a bamboo lid and a metal straw",
       keychainOwl: "A jewelled owl keyring resting on an open hand",
     },
   },

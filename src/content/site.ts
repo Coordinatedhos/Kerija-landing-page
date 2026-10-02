@@ -76,7 +76,7 @@ export const photos = {
   workshops: {
     fan: { src: "/images/workshop-fan.jpg" },
     glasses: { src: "/images/wineglass-sunflowers.jpg" },
-    keychainChild: { src: "/images/workshop-keychain-child.jpg" },
+    keychainChild: { src: "/images/glass-hydrangea.jpg" },
     keychainOwl: { src: "/images/workshop-keychain-owl.jpg" },
   },
   events: {

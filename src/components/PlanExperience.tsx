@@ -1,4 +1,3 @@
-import Image from "next/image";
 import BookingLink from "@/components/BookingLink";
 import Photo from "@/components/Photo";
 import Reveal from "@/components/Reveal";
@@ -11,13 +10,7 @@ export default function PlanExperience({
 }) {
   return (
     <section className="relative isolate">
-      <Image
-        src={copy.background.src}
-        alt={copy.background.alt}
-        fill
-        sizes="100vw"
-        className="-z-10 object-cover"
-      />
+      <div className="floral-backdrop absolute inset-0 -z-10" />
       <div className="absolute inset-0 -z-10 bg-cream/20" />
 
       <div className="mx-auto max-w-[1240px] px-4 py-14 md:px-8 md:py-16">

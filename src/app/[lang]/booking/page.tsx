@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import Masthead from "@/components/Masthead";
 import NavBar from "@/components/NavBar";
@@ -53,13 +52,7 @@ export default async function BookingPage({
       </header>
 
       <main className="relative flex-1 isolate">
-        <Image
-          src={content.plan.background.src}
-          alt=""
-          fill
-          sizes="100vw"
-          className="-z-10 object-cover"
-        />
+        <div className="floral-backdrop absolute inset-0 -z-10" />
         <div className="absolute inset-0 -z-10 bg-cream/25" />
 
         <div className="mx-auto max-w-[760px] px-4 py-14 md:px-8 md:py-20">

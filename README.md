@@ -98,7 +98,6 @@ Photos in place from earlier:
 | Slot                         | Current file                  | Notes                                                                                                                             |
 | ---------------------------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | Hero photo                   | `hero-pots.jpg`               | Original                                                                                                                          |
-| Hero / About backdrop, bands | `flowers.jpg`                 | Cropped from the mockup screenshot — a higher-resolution original would sharpen the thin bands and the invitation band's backdrop |
 | Workshop tile 1              | `workshop-fan.jpg`            | Original                                                                                                                          |
 | Workshop tile 2              | `wineglass-sunflowers.jpg`    | Original. Replaced `workshop-glasses.jpg`, which was a 277×378 crop out of the mockup screenshot                                  |
 | Workshop tile 3              | `workshop-keychain-child.jpg` | Original                                                                                                                          |
@@ -200,8 +199,22 @@ A few details that aren't obvious from reading the components:
   displacement frays each into fibres, and the tips run whiter than the sheet.
   Between them the combs are about 1,500 points, most of that file's weight in
   the served HTML — coarsen the steps before adding a fourth.
+- **The floral backdrop is painted, not photographed.** The wash behind the
+  hero, the About card, the invitation band and the thin strips between
+  sections is the `.floral-backdrop` class in
+  [`globals.css`](src/app/globals.css): a mesh of soft radial gradients over a
+  blush base. It replaced `flowers.jpg`, which was 1600×332 — the hero cropped
+  that to its middle third and blew it up fourfold, so what reached the screen
+  was blurred and banded. The gradient's colours are sampled from the part of
+  that photo which was actually visible, on a 5×4 grid, each pushed away from
+  the mean so the modelling survives, with two faint diagonals standing in for
+  the brushes that ran across the original. Being colour rather than pixels it
+  is sharp at any size, costs no download, and doesn't care what shape the box
+  it fills is — which is why the same class serves both a tall hero and a 28px
+  strip.
 - **The thin floral strips** between sections are `FloralBand`, standing in for
-  the mockup's habit of laying cards over the background photo.
+  the mockup's habit of laying cards over the background photo. The dark
+  "How it works" band has one on each side.
 - **Fonts**: Playfair Display for headings and body serif, Outfit for the small
   uppercase sans, and Great Vibes for script accents — the step numerals in
   "How it works", the accent in the invitation band, and "Menu" in the footer.

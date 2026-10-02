@@ -92,7 +92,7 @@ export const lv = {
       glasses:
         "Ar rokām apgleznota vīna glāze ar saulespuķēm, pacelta dārzā pret zaļumiem",
       keychainChild:
-        "Bērns tur koka atslēgu piekariņu, uz kura uzgleznota tulpe un saule",
+        "Ar rokām apgleznota stikla glāze ar zilām hortenzijām, bambusa vāciņu un salmiņu",
       keychainOwl:
         "Ar akmentiņiem rotāts pūces atslēgu piekariņš uz atvērtas plaukstas",
     },

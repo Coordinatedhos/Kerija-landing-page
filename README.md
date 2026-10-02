@@ -100,7 +100,7 @@ Photos in place from earlier:
 | Hero photo                   | `hero-pots.jpg`               | Original                                                                                                                          |
 | Workshop tile 1              | `workshop-fan.jpg`            | Original                                                                                                                          |
 | Workshop tile 2              | `wineglass-sunflowers.jpg`    | Original. Replaced `workshop-glasses.jpg`, which was a 277×378 crop out of the mockup screenshot                                  |
-| Workshop tile 3              | `workshop-keychain-child.jpg` | Original                                                                                                                          |
+| Workshop tile 3              | `glass-hydrangea.jpg`         | Original                                                                                                                          |
 | Workshop tile 4              | `workshop-keychain-owl.jpg`   | Original                                                                                                                          |
 | "Plan your experience" inset | `workshop-keychain-bunny.jpg` | Original                                                                                                                          |
 
@@ -111,7 +111,7 @@ should go and it is a one-line change in `site.ts`:
 
 | File                    | Photo                                                    |
 | ----------------------- | -------------------------------------------------------- |
-| `glass-hydrangea.jpg`   | A glass tumbler painted with blue hydrangeas              |
+| `workshop-keychain-child.jpg` | A child holding a keyring painted with a tulip and sun |
 | `brushes-circle.jpg`    | The earlier circle of painted hairbrushes, shot outdoors  |
 | `workshop-glasses.jpg`  | The 277×378 crop recovered from the mockup screenshot     |
 

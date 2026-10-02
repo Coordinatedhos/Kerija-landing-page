@@ -72,8 +72,6 @@ export const navLinks: {
 export const workshopsHref = "#workshops";
 
 export const photos = {
-  /** The floral backdrop behind the hero and About, and the thin bands. */
-  flowers: { src: "/images/flowers.jpg" },
   heroPots: { src: "/images/hero-pots.jpg" },
   workshops: {
     fan: { src: "/images/workshop-fan.jpg" },

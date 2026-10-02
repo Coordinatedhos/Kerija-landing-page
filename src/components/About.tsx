@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import TornEdge from "@/components/TornEdge";
 import type { Content } from "@/content";
@@ -6,13 +5,7 @@ import type { Content } from "@/content";
 export default function About({ copy }: { copy: Content["about"] }) {
   return (
     <section id="about" className="relative z-10 isolate">
-      <Image
-        src={copy.background.src}
-        alt={copy.background.alt}
-        fill
-        sizes="100vw"
-        className="-z-10 object-cover"
-      />
+      <div className="floral-backdrop absolute inset-0 -z-10" />
 
       <div className="mx-auto max-w-[1240px] px-4 pt-16 pb-16 md:px-8 md:pt-24 md:pb-24">
         {/* Torn on the top and bottom edges, cut clean on the sides. */}

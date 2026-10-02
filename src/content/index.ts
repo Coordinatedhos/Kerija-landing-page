@@ -40,11 +40,6 @@ function photo(slot: PhotoSlot, alt: string): Photo {
   return { ...slot, alt };
 }
 
-/** Backdrops and the thin bands say nothing, so their alt text stays empty. */
-function decorative(slot: PhotoSlot): Photo {
-  return { ...slot, alt: "" };
-}
-
 export function getContent(locale: Locale) {
   const c = copy[locale];
 
@@ -95,14 +90,12 @@ export function getContent(locale: Locale) {
       heading: c.hero.heading,
       body: c.hero.body,
       cta: c.hero.cta,
-      background: decorative(photos.flowers),
       photo: photo(photos.heroPots, c.hero.alts.photo),
     },
 
     about: {
       heading: c.about.heading,
       body: c.about.body,
-      background: decorative(photos.flowers),
     },
 
     workshops: {
@@ -116,9 +109,6 @@ export function getContent(locale: Locale) {
         photo(photos.workshops.keychainOwl, c.workshops.alts.keychainOwl),
       ],
     },
-
-    /** The thin floral strip that separates the stacked cards in the mockup. */
-    band: decorative(photos.flowers),
 
     howItWorks: c.howItWorks,
 
@@ -149,7 +139,6 @@ export function getContent(locale: Locale) {
       cta: c.plan.cta,
       photo: photo(photos.fans, c.plan.alts.photo),
       inset: photo(photos.bunny, c.plan.alts.inset),
-      background: decorative(photos.flowers),
     },
 
     footer: c.footer,

@@ -208,3 +208,20 @@ body {
   background-size: 140px 140px, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto;
   background-blend-mode: soft-light, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal;
 }
+
+/* The circular photo in "Events we do".
+
+   Three mechanisms, because Safari has quietly ignored two of them in turn:
+   it does not apply border-radius to a container whose ancestor is being
+   transformed (the scroll reveal around that section is), and it does not
+   apply border-radius to an image with object-fit either — both left the
+   photo's corners painted over the card beside it. clip-path and a mask are
+   composited differently again, so between the three of them something clips
+   in every engine. */
+.circle-crop {
+  overflow: hidden;
+  border-radius: 9999px;
+  clip-path: circle(50%);
+  -webkit-mask-image: radial-gradient(circle, #000 99.5%, transparent 100%);
+  mask-image: radial-gradient(circle, #000 99.5%, transparent 100%);
+}

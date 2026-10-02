@@ -10,7 +10,6 @@ export default function PlanExperience({
 }) {
   return (
     <section className="relative isolate">
-      <div className="absolute inset-0 -z-10 bg-cream/20" />
 
       <div className="mx-auto max-w-[1240px] px-4 py-14 md:px-8 md:py-16">
         <Reveal>

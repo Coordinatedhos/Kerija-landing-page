@@ -8,8 +8,6 @@ export default function Hero({ copy }: { copy: Content["hero"] }) {
     // z-20 keeps the photo above the About section it overhangs; no
     // overflow-hidden, or that overhang would be clipped off.
     <section id="home" className="relative z-20 isolate">
-      {/* The mockup lightens the backdrop behind the card. */}
-      <div className="absolute inset-0 -z-10 bg-cream/25" />
 
       <div className="mx-auto max-w-[1400px] px-4 pt-10 pb-10 md:px-8 md:pt-14 md:pb-0">
         <div className="grid items-start gap-6 lg:grid-cols-12 lg:gap-0">

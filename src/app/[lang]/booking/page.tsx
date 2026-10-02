@@ -52,7 +52,6 @@ export default async function BookingPage({
       </header>
 
       <main className="relative flex-1 isolate">
-        <div className="absolute inset-0 -z-10 bg-cream/25" />
 
         <div className="mx-auto max-w-[760px] px-4 py-14 md:px-8 md:py-20">
           <h1 className="text-center font-serif text-3xl tracking-[0.04em] text-foreground sm:text-4xl">

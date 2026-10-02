@@ -29,10 +29,10 @@ export default function Hero({ copy }: { copy: Content["hero"] }) {
               photo overlaps it, as in the mockup. The negative bottom margin
               lets it hang past the section and over the About card. */}
           <Reveal
-            className="relative z-10 lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:mt-16 lg:-mb-28"
+            className="relative z-10 lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:mt-16 lg:-mb-20"
             delay={120}
           >
-            <div className="relative aspect-[4/3] w-full lg:aspect-[5/6]">
+            <div className="relative aspect-[4/3] w-full lg:aspect-[7/6]">
               <Image
                 src={copy.photo.src}
                 alt={copy.photo.alt}

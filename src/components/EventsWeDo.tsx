@@ -15,13 +15,9 @@ export default function EventsWeDo({
             is what keeps the two flush top and bottom, as the mockup has them. */}
         <Reveal>
           <div className="relative">
-            {/* clip-path, not a rounded box, is what actually makes this a
-                circle in Safari: it ignores border-radius both on a container
-                whose ancestor is being transformed — which the scroll reveal
-                here does — and on an image with object-fit, so the photo's
-                corners kept spilling over the card. rounded-full stays for the
-                shape, and clip-path does the clipping. */}
-            <div className="relative z-10 mx-auto mb-8 aspect-square w-56 overflow-hidden rounded-full [clip-path:circle(50%)] sm:w-80 lg:absolute lg:top-0 lg:left-0 lg:mx-0 lg:mb-0 lg:h-full lg:w-auto">
+            {/* circle-crop, not rounded-full: see globals.css for why this
+                needs three different ways of clipping to stay a circle. */}
+            <div className="circle-crop relative z-10 mx-auto mb-8 aspect-square w-56 sm:w-80 lg:absolute lg:top-0 lg:left-0 lg:mx-0 lg:mb-0 lg:h-full lg:w-auto">
               <Photo
                 photo={copy.photo}
                 sizes="(min-width: 1024px) 34vw, 20rem"

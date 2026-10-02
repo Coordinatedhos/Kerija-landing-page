@@ -27,17 +27,12 @@ export const brand = {
   name: "BLOOM STUDIO",
 };
 
-export const booking = {
-  /**
-   * TODO: paste the Calendly scheduling link here, e.g.
-   * "https://calendly.com/bloomstudio/workshop".
-   * While this is empty the booking buttons simply scroll to the footer and
-   * no Calendly script or cookie is loaded.
-   */
-  calendlyUrl: "",
-  /** Where booking buttons point when Calendly isn't configured yet. */
-  fallbackHref: "#contact",
-};
+/**
+ * Where every "reserve" button goes, under the language segment — so
+ * /lv/booking and /en/booking. The form there asks for the six details and
+ * emails them over; see src/app/api/booking/route.ts.
+ */
+export const bookingPath = "booking";
 
 /** Shown in the footer, now that the standalone contact card is gone. */
 export const contact = {

@@ -189,6 +189,45 @@ export const en: Copy = {
     },
   },
 
+  /** The booking form the "reserve" buttons open. */
+  booking: {
+    meta: {
+      title: "Book your activity | Bloom Studio",
+      description:
+        "Tell us about your event and we'll put together an individual offer with the workshop, materials, duration and price.",
+    },
+    heading: "BOOK YOUR ACTIVITY",
+    intro:
+      "Tell us about your event — we'll come back with an individual offer covering the workshop, materials, duration and price.",
+    fields: {
+      name: "Name",
+      contact: "Email / phone",
+      eventType: "Event type",
+      date: "Date",
+      location: "Location",
+      guests: "Number of guests",
+    },
+    hints: {
+      name: "Your name",
+      contact: "name@email.com or +371 20000000",
+      eventType: "Birthday, bridal shower, corporate event…",
+      location: "City or address",
+      guests: "e.g. 12",
+    },
+    submit: "SEND ENQUIRY",
+    sending: "Sending…",
+    success: {
+      heading: "Thank you!",
+      body: "We have your enquiry and will be in touch shortly.",
+    },
+    /** Shown when the site has no mail service set up and we hand over to the visitor's own. */
+    mailto:
+      "Opening your email app with the message already filled in — all that's left is to send it.",
+    error: "The enquiry could not be sent. Try again, or write to us directly:",
+    emailSubject: "New workshop enquiry",
+    back: "Back to the home page",
+  },
+
   footer: {
     menuHeading: "Menu",
     note: "Bring your people together through creativity.",

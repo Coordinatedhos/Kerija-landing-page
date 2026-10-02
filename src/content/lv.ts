@@ -192,6 +192,45 @@ export const lv = {
     },
   },
 
+  /** The booking form the "reserve" buttons open. */
+  booking: {
+    meta: {
+      title: "Rezervē savu aktivitāti | Bloom Studio",
+      description:
+        "Pastāsti par savu pasākumu, un mēs sagatavosim individuālu piedāvājumu ar darbnīcu, materiāliem, ilgumu un cenu.",
+    },
+    heading: "REZERVĒ SAVU AKTIVITĀTI",
+    intro:
+      "Pastāsti par savu pasākumu — atbildēsim ar individuālu piedāvājumu, kurā būs darbnīca, materiāli, ilgums un cena.",
+    fields: {
+      name: "Vārds",
+      contact: "E-pasts / tālrunis",
+      eventType: "Pasākuma veids",
+      date: "Datums",
+      location: "Norises vieta",
+      guests: "Viesu skaits",
+    },
+    hints: {
+      name: "Tavs vārds",
+      contact: "vards@epasts.lv vai 20000000",
+      eventType: "Dzimšanas diena, vecmeitu ballīte, korporatīvs pasākums…",
+      location: "Pilsēta vai adrese",
+      guests: "piemēram, 12",
+    },
+    submit: "NOSŪTĪT PIETEIKUMU",
+    sending: "Sūta…",
+    success: {
+      heading: "Paldies!",
+      body: "Pieteikums ir saņemts. Sazināsimies ar tevi tuvākajā laikā.",
+    },
+    /** Shown when the site has no mail service set up and we hand over to the visitor's own. */
+    mailto:
+      "Atveram tavu e-pasta programmu ar jau aizpildītu vēstuli — atliek to nosūtīt.",
+    error: "Neizdevās nosūtīt pieteikumu. Mēģini vēlreiz vai raksti mums tieši:",
+    emailSubject: "Jauns darbnīcas pieteikums",
+    back: "Atpakaļ uz sākumu",
+  },
+
   footer: {
     menuHeading: "Izvēlne",
     note: "Saliedē savus cilvēkus ar radošumu.",

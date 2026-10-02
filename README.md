@@ -66,6 +66,10 @@ components to change copy, photos, links, or contact details.
 | Plan your experience now                    | `PlanExperience`                | —               |
 | Footer, with contact details                | `Footer`                        | `#contact`      |
 
+The booking form is its own page — `/lv/booking` and `/en/booking` — built
+from `Masthead`, `NavBar`, [`BookingForm`](src/components/BookingForm.tsx) and
+`Footer`.
+
 ## Still to fill in
 
 ### Photos
@@ -112,28 +116,33 @@ should go and it is a one-line change in `site.ts`:
 | `brushes-circle.jpg`    | The earlier circle of painted hairbrushes, shot outdoors  |
 | `workshop-glasses.jpg`  | The 277×378 crop recovered from the mockup screenshot     |
 
-### Calendly booking link
+### Booking enquiries
 
-One link switches on every booking button on the page — `REZERVĒ SAVU
-AKTIVITĀTI` / `BOOK YOUR ACTIVITY` and `REZERVĒ TAGAD` / `RESERVE NOW`, in both
-languages — which then open the Calendly popup.
+Every `REZERVĒ SAVU AKTIVITĀTI` / `BOOK YOUR ACTIVITY` button goes to the
+booking form at `/lv/booking` and `/en/booking`, which asks for the six
+details an offer needs: name, email or phone, event type, date, location and
+number of guests.
 
-```ts
-export const booking = {
-  calendlyUrl: "https://calendly.com/your-name/your-event", // ← paste here
-  fallbackHref: "#contact",
-};
-```
+[`src/app/api/booking/route.ts`](src/app/api/booking/route.ts) emails the
+enquiry to the address in `contact.email`. Delivery goes through
+[Resend](https://resend.com) over plain `fetch`, so there is no package to
+install or keep up to date. To switch it on, set two environment variables in
+the Vercel project:
 
-That is the only change required — no component edits, no packages to install,
-no API key.
+| Variable             | Value                                                        |
+| -------------------- | ------------------------------------------------------------ |
+| `RESEND_API_KEY`     | An API key from the Resend dashboard                          |
+| `BOOKING_FROM_EMAIL` | A sender on a domain verified with Resend, e.g. `Bloom Studio <hello@bloomstudio.lv>` |
 
-While `calendlyUrl` is `""` the buttons scroll to the footer instead, and no
-Calendly script or cookie is loaded at all.
+**Until those exist the form still works**: the server answers
+"not-configured", and the page hands the finished message to the visitor's own
+email app with every field already filled in, addressed to the studio. The
+enquiry is one tap from being sent rather than lost — but it does depend on
+the visitor having an email app set up, which is why the two variables above
+are worth doing.
 
-Calendly is fetched on the first click, never at page load, so visitors who
-never book never download it. Note that once it does load, Calendly sets
-third-party cookies — worth a cookie notice if that matters for your audience.
+A hidden `website` field catches bots: anything that fills it in gets a
+cheerful "sent" and nothing is emailed.
 
 ### Social profile links
 

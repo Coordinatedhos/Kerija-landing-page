@@ -41,6 +41,8 @@ export default async function Home({
         <Workshops copy={content.workshops} />
         <FloralBand photo={content.band} />
         <HowItWorks copy={content.howItWorks} />
+        {/* The dark band is framed by a floral strip on both sides. */}
+        <FloralBand photo={content.band} />
         <EventsWeDo copy={content.eventsWeDo} />
         <Personalised copy={content.personalised} />
         <FloralBand photo={content.band} />

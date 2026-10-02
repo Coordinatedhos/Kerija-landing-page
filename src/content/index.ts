@@ -72,7 +72,7 @@ export function getContent(locale: Locale) {
     masthead: {
       left: {
         question: c.masthead.leftQuestion,
-        link: { label: c.masthead.leftLink, href: workshopsHref },
+        link: { label: c.masthead.leftLink, href: `/${locale}${workshopsHref}` },
       },
       right: {
         question: c.masthead.rightQuestion,
@@ -82,7 +82,13 @@ export function getContent(locale: Locale) {
 
     nav: {
       socials,
-      links: navLinks.map((link) => ({ ...link, label: c.nav[link.key] })),
+      // Anchors are prefixed with the language, so the nav works from the
+      // booking page as well as from the home page it points into.
+      links: navLinks.map((link) => ({
+        ...link,
+        href: `/${locale}${link.href}`,
+        label: c.nav[link.key],
+      })),
     },
 
     hero: {
@@ -147,6 +153,8 @@ export function getContent(locale: Locale) {
     },
 
     footer: c.footer,
+
+    bookingForm: c.booking,
 
     contact,
   };

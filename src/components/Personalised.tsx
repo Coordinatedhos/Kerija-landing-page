@@ -11,8 +11,8 @@ export default function Personalised({
     <section className="bg-blush py-10 md:py-16">
       <div className="mx-auto max-w-[1240px] px-4 md:px-8">
         <Reveal>
-          <div className="grid items-center gap-6 lg:grid-cols-12 lg:gap-6">
-            <div className="text-center lg:col-span-5 lg:col-start-1">
+          <div className="grid items-center gap-3 lg:grid-cols-2">
+            <div className="text-center">
               <h2 className="font-serif text-[1.9rem] leading-tight text-foreground sm:text-4xl">
                 {copy.heading}
               </h2>
@@ -24,9 +24,7 @@ export default function Personalised({
               </p>
             </div>
 
-            {/* z-10 so this photo covers the top corner of the card below it,
-              which is how the mockup tucks the two together. */}
-            <div className="relative z-10 aspect-[3/2] w-full lg:col-span-5 lg:col-start-8 lg:aspect-[9/8]">
+            <div className="relative aspect-[3/2] w-full lg:aspect-[4/3]">
               <Photo
                 photo={copy.photos.brushes}
                 sizes="(min-width: 1024px) 40vw, 100vw"
@@ -36,14 +34,12 @@ export default function Personalised({
         </Reveal>
 
         <Reveal>
-          <div className="mt-8 grid gap-6 lg:-mt-12 lg:grid-cols-12 lg:gap-0">
+          <div className="mt-3 grid gap-3 lg:grid-cols-2">
             {/* Two halves of one photo, cut over the same horizontal span, so
-              at one width they share a scale and the scene runs on unbroken.
-              They fill the column so the pair runs right up to the card, the
-              way the mockup butts them together. The tiles crop shorter on
-              small screens — the upper anchored to its bottom edge, the lower
-              to its top — which keeps the join seamless. */}
-            <div className="lg:col-span-5 lg:col-start-2 lg:row-start-1">
+              at one width they sit at one scale. They used to butt together
+              seamlessly; they now carry the same margin as everything else in
+              the section, which is what keeps the grid even. */}
+            <div className="grid gap-3">
               <div className="relative aspect-[3/2] w-full lg:aspect-[4/3]">
                 <Photo
                   photo={copy.photos.children}
@@ -58,7 +54,7 @@ export default function Personalised({
               </div>
             </div>
 
-            <div className="flex flex-col justify-center bg-cream px-7 py-10 sm:px-10 lg:col-span-6 lg:col-start-7 lg:row-start-1">
+            <div className="flex flex-col justify-center bg-cream px-7 py-10 sm:px-10">
               <h2 className="text-center font-serif text-3xl tracking-[0.04em] text-foreground sm:text-4xl lg:text-[2.9rem] lg:leading-[1.15]">
                 {copy.consider.heading}
               </h2>

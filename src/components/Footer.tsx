@@ -31,7 +31,7 @@ export default function Footer({
   return (
     // #contact lands here now that the standalone contact card is gone.
     <footer id="contact" className="bg-pink">
-      <div className="mx-auto max-w-[1240px] px-6 py-14 md:px-10 md:py-16">
+      <div className="mx-auto max-w-[1240px] px-6 py-10 md:px-10 md:py-16">
         <Reveal>
           {/* Three panels split by hairlines, the way the reference footer
               divides menu, name and call to action. */}
@@ -42,17 +42,17 @@ export default function Footer({
               </h2>
               <div className="mt-5 flex justify-center gap-10 md:justify-start md:gap-8">
                 {columns.map((column, index) => (
-                  <ul key={index} className="space-y-2">
+                  <ul key={index} className="space-y-0.5 md:space-y-2">
                     {column.map((link) => (
                       <li key={link.key}>
                         {link.booking ? (
-                          <BookingLink className="text-[11px] tracking-[0.14em] text-foreground/80 uppercase transition-colors hover:text-rust">
+                          <BookingLink className="block py-3 text-[12px] tracking-[0.14em] text-foreground/80 uppercase transition-colors hover:text-rust md:py-0 md:text-[11px]">
                             {link.label}
                           </BookingLink>
                         ) : (
                           <a
                             href={link.href}
-                            className="text-[11px] tracking-[0.14em] text-foreground/80 uppercase transition-colors hover:text-rust"
+                            className="block py-3 text-[12px] tracking-[0.14em] text-foreground/80 uppercase transition-colors hover:text-rust md:py-0 md:text-[11px]"
                           >
                             {link.label}
                           </a>
@@ -85,7 +85,7 @@ export default function Footer({
                 <li>
                   <a
                     href={`mailto:${contact.email}`}
-                    className="inline-flex items-center gap-2.5 text-sm text-foreground/80 transition-colors hover:text-rust"
+                    className="inline-flex items-center gap-2.5 py-3 text-sm text-foreground/80 transition-colors hover:text-rust md:py-0"
                   >
                     <MailIcon className="h-4 w-4 text-rust" />
                     {contact.email}
@@ -94,14 +94,14 @@ export default function Footer({
                 <li>
                   <a
                     href={`tel:${contact.phone.replace(/\s+/g, "")}`}
-                    className="inline-flex items-center gap-2.5 text-sm text-foreground/80 transition-colors hover:text-rust"
+                    className="inline-flex items-center gap-2.5 py-3 text-sm text-foreground/80 transition-colors hover:text-rust md:py-0"
                   >
                     <PhoneIcon className="h-4 w-4 text-rust" />
                     {contact.phone}
                   </a>
                 </li>
               </ul>
-              <BookingLink className="mt-6 inline-block bg-charcoal px-8 py-4 text-[11px] font-semibold tracking-[0.18em] text-cream uppercase transition-colors hover:bg-foreground">
+              <BookingLink className="mt-6 inline-block bg-charcoal px-8 py-4 text-[12px] font-semibold tracking-[0.18em] sm:text-[11px] text-cream uppercase transition-colors hover:bg-foreground">
                 {copy.cta}
               </BookingLink>
             </div>
@@ -118,7 +118,7 @@ export default function Footer({
                   <a
                     href={social.href}
                     aria-label={social.label}
-                    className="block text-foreground/70 transition-colors hover:text-rust"
+                    className="block p-3 text-foreground/70 transition-colors hover:text-rust"
                   >
                     <Icon className="h-5 w-5" />
                   </a>

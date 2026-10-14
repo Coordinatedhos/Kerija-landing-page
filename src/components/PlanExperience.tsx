@@ -11,7 +11,7 @@ export default function PlanExperience({
   return (
     <section className="relative isolate">
 
-      <div className="mx-auto max-w-[1240px] px-4 py-14 md:px-8 md:py-16">
+      <div className="mx-auto max-w-[1240px] px-4 py-10 md:px-8 md:py-16">
         <Reveal>
           <div className="flex flex-col gap-4 lg:flex-row lg:items-stretch">
             <div className="relative aspect-[4/3] w-full lg:aspect-auto lg:w-[34%]">
@@ -21,7 +21,7 @@ export default function PlanExperience({
               />
             </div>
 
-            <div className="flex flex-1 items-center gap-8 bg-cream px-6 py-12 sm:px-10 lg:py-14">
+            <div className="flex flex-1 items-center gap-8 bg-cream px-6 py-10 sm:px-10 sm:py-12 lg:py-14">
               <div className="flex-1 text-center">
                 <h2 className="font-serif text-3xl leading-tight text-foreground sm:text-4xl">
                   {copy.lead}{" "}
@@ -32,7 +32,7 @@ export default function PlanExperience({
                 <p className="mx-auto mt-4 max-w-[34rem] text-sm leading-relaxed text-foreground/75 sm:text-base">
                   {copy.body}
                 </p>
-                <BookingLink className="mt-8 inline-block bg-charcoal px-10 py-4 text-[11px] font-semibold tracking-[0.18em] text-cream uppercase transition-colors hover:bg-foreground">
+                <BookingLink className="mt-8 inline-block bg-charcoal px-10 py-4 text-[12px] font-semibold tracking-[0.18em] sm:text-[11px] text-cream uppercase transition-colors hover:bg-foreground">
                   {copy.cta}
                 </BookingLink>
               </div>

@@ -29,7 +29,7 @@ export default function LanguageSwitch({
             lang={language.code}
             title={language.name}
             aria-current={language.current ? "true" : undefined}
-            className={`block px-1.5 py-1 text-[12px] tracking-[0.1em] transition-opacity ${
+            className={`block px-3.5 py-3 text-[13px] tracking-[0.1em] transition-opacity ${
               language.current
                 ? "underline underline-offset-4"
                 : "opacity-60 hover:opacity-100"

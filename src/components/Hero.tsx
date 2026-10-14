@@ -9,9 +9,9 @@ export default function Hero({ copy }: { copy: Content["hero"] }) {
     // overflow-hidden, or that overhang would be clipped off.
     <section id="home" className="relative z-20 isolate">
 
-      <div className="mx-auto max-w-[1400px] px-4 pt-10 pb-10 md:px-8 md:pt-14 md:pb-0">
-        <div className="grid items-start gap-6 lg:grid-cols-12 lg:gap-0">
-          <div className="bg-slate px-8 py-14 sm:px-12 lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:py-24 lg:pr-24">
+      <div className="mx-auto max-w-[1400px] px-4 pt-6 pb-8 md:px-8 md:pt-14 md:pb-0">
+        <div className="grid items-start gap-4 lg:grid-cols-12 lg:gap-0">
+          <div className="bg-slate px-6 py-10 sm:px-12 sm:py-14 lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:py-24 lg:pr-24">
             <Reveal>
               <h1 className="font-serif text-3xl leading-tight tracking-[0.02em] text-white sm:text-4xl lg:text-[2.9rem]">
                 {copy.heading}
@@ -19,7 +19,7 @@ export default function Hero({ copy }: { copy: Content["hero"] }) {
               <p className="mt-8 max-w-md text-sm leading-relaxed text-muted">
                 {copy.body}
               </p>
-              <BookingLink className="mt-10 inline-block border border-white/70 px-9 py-4 text-[11px] font-semibold tracking-[0.12em] text-white uppercase transition-colors hover:bg-white hover:text-slate">
+              <BookingLink className="mt-10 inline-block border border-white/70 px-9 py-4 text-[12px] font-semibold tracking-[0.12em] sm:text-[11px] text-white uppercase transition-colors hover:bg-white hover:text-slate">
                 {copy.cta}
               </BookingLink>
             </Reveal>

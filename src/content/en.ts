@@ -159,6 +159,8 @@ export const en: Copy = {
         "A circle of hands holding bamboo hairbrushes hand-painted with suns, flowers, a whale and a swan",
       keyring:
         "A child's hands holding a wooden keyring painted with a tulip and a sun",
+      boards:
+        "Hand-painted wooden boards and serving trays laid out on decking",
     },
     consider: {
       heading: "WHAT WE CONSIDER",

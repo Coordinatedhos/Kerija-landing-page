@@ -86,6 +86,7 @@ export const photos = {
   },
   brushes: { src: "/images/brushes-circle-indoors.jpg" },
   keyring: { src: "/images/keyring-tulip.jpg" },
+  boards: { src: "/images/painted-boards.jpg" },
   fans: {
     src: "/images/fans-pencils.jpg",
     position: "center 38%",

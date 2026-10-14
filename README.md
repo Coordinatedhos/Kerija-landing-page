@@ -84,6 +84,7 @@ is actually there.
 | `events-picnic.jpg`  | Guests painting on picnic blankets in the park   | Circle in "Events we do"    |
 | `brushes-circle-indoors.jpg` | Circle of hands holding painted hairbrushes | "Every event is different" |
 | `keyring-tulip.jpg`  | A child's hands holding a keyring painted with a tulip | "Every event is different" |
+| `painted-boards.jpg` | Painted boards and serving trays on decking       | Beside "What we consider" |
 | `fans-pencils.jpg`   | Painted fans with pencil tins and paint palettes | "Plan your experience" band |
 
 Photos in place from earlier:

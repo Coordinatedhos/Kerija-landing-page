@@ -83,15 +83,8 @@ is actually there.
 | -------------------- | ------------------------------------------------ | --------------------------- |
 | `events-picnic.jpg`  | Guests painting on picnic blankets in the park   | Circle in "Events we do"    |
 | `brushes-circle-indoors.jpg` | Circle of hands holding painted hairbrushes | "Every event is different" |
-| `kids-children.jpg`  | The three children decorating keyrings           | Collage, upper tile         |
-| `kids-supplies.jpg`  | Paint pens and the box of beads and ribbons      | Collage, lower tile         |
+| `keyring-tulip.jpg`  | A child's hands holding a keyring painted with a tulip | "Every event is different" |
 | `fans-pencils.jpg`   | Painted fans with pencil tins and paint palettes | "Plan your experience" band |
-
-The two `kids-*` files are cut from one original photo, the way the mockup cuts
-it: the children above, the table of supplies below. Both are cut over the same
-horizontal span (760px of a 1280px original, starting 150px in), so shown at one
-width they sit at one scale and the scene runs on unbroken across the join.
-Keep that in step if you ever recrop either one.
 
 Photos in place from earlier:
 
@@ -106,12 +99,14 @@ Photos in place from earlier:
 
 ### Photos sitting in the folder, unplaced
 
-Three originals are in `public/images/` with no slot — say where any of them
+These originals are in `public/images/` with no slot — say where any of them
 should go and it is a one-line change in `site.ts`:
 
 | File                    | Photo                                                    |
 | ----------------------- | -------------------------------------------------------- |
-| `workshop-keychain-child.jpg` | A child holding a keyring painted with a tulip and sun |
+| `kids-children.jpg`     | The three children decorating keyrings                     |
+| `kids-supplies.jpg`     | Paint pens and the box of beads and ribbons                |
+| `workshop-keychain-child.jpg` | The earlier, smaller shot of the tulip keyring       |
 | `brushes-circle.jpg`    | The earlier circle of painted hairbrushes, shot outdoors  |
 | `workshop-glasses.jpg`  | The 277×378 crop recovered from the mockup screenshot     |
 

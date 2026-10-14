@@ -160,10 +160,8 @@ export const lv = {
     alts: {
       brushes:
         "Roku aplis ar bambusa matu sukām, kas apgleznotas ar saulēm, ziediem, vali un gulbi",
-      children:
-        "Bērni pie āra galda rotā koka atslēgu piekariņus ar krāsu marķieriem",
-      supplies:
-        "Akrila krāsu marķieru komplekti un kaste ar krellēm, lentēm un rotu detaļām uz darbnīcas galda",
+      keyring:
+        "Bērna rokas tur koka atslēgu piekariņu, uz kura uzgleznota tulpe un saule",
     },
     consider: {
       heading: "KO MĒS ŅEMAM VĒRĀ",

@@ -85,19 +85,7 @@ export const photos = {
     position: "center 32%",
   },
   brushes: { src: "/images/brushes-circle-indoors.jpg" },
-  // The mockup cuts one photo of the children's workshop into two tiles: the
-  // children above, the table of supplies below. Both are cut from the same
-  // original over the same horizontal span, so shown at one width they sit at
-  // one scale and the scene runs on unbroken across the join.
-  children: {
-    src: "/images/kids-children.jpg",
-    // Anchored to the join, so cropping on small screens takes off the top.
-    position: "center bottom",
-  },
-  supplies: {
-    src: "/images/kids-supplies.jpg",
-    position: "center top",
-  },
+  keyring: { src: "/images/keyring-tulip.jpg" },
   fans: {
     src: "/images/fans-pencils.jpg",
     position: "center 38%",

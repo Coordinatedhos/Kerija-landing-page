@@ -35,23 +35,14 @@ export default function Personalised({
 
         <Reveal>
           <div className="mt-3 grid gap-3 lg:grid-cols-2">
-            {/* Two halves of one photo, cut over the same horizontal span, so
-              at one width they sit at one scale. They used to butt together
-              seamlessly; they now carry the same margin as everything else in
-              the section, which is what keeps the grid even. */}
-            <div className="grid gap-3">
-              <div className="relative aspect-[3/2] w-full lg:aspect-[4/3]">
-                <Photo
-                  photo={copy.photos.children}
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                />
-              </div>
-              <div className="relative aspect-[3/1] w-full lg:aspect-[19/9]">
-                <Photo
-                  photo={copy.photos.supplies}
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                />
-              </div>
+            {/* Portrait, so the photo keeps its subject instead of being cut
+              to a strip — and at roughly the height the two stacked tiles it
+              replaced came to between them. */}
+            <div className="relative aspect-[3/4] w-full">
+              <Photo
+                photo={copy.photos.keyring}
+                sizes="(min-width: 1024px) 40vw, 100vw"
+              />
             </div>
 
             <div className="flex flex-col justify-center bg-cream px-7 py-10 sm:px-10">

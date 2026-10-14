@@ -157,10 +157,8 @@ export const en: Copy = {
     alts: {
       brushes:
         "A circle of hands holding bamboo hairbrushes hand-painted with suns, flowers, a whale and a swan",
-      children:
-        "Children decorating wooden keyrings with paint pens at an outdoor table",
-      supplies:
-        "Cases of acrylic paint pens and a box of beads, ribbons and findings on the workshop table",
+      keyring:
+        "A child's hands holding a wooden keyring painted with a tulip and a sun",
     },
     consider: {
       heading: "WHAT WE CONSIDER",

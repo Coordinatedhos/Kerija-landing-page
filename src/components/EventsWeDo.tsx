@@ -29,7 +29,7 @@ export default function EventsWeDo({
               className="relative z-10 mx-auto mb-8 aspect-square w-56 rounded-full bg-cover bg-center sm:w-80 lg:absolute lg:top-0 lg:left-0 lg:mx-0 lg:mb-0 lg:h-full lg:w-auto"
             />
 
-            <div className="bg-charcoal px-6 py-10 text-center sm:px-10 sm:py-12 lg:ml-[14%] lg:py-24 lg:pr-14 lg:pl-[26%]">
+            <div className="bg-charcoal px-6 py-10 text-center sm:px-10 sm:py-12 lg:ml-[14%] lg:py-12 lg:pr-14 lg:pl-[26%]">
               <h2 className="font-serif text-3xl tracking-[0.06em] text-cream sm:text-4xl lg:text-[2.7rem]">
                 {copy.heading}
               </h2>

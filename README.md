@@ -162,6 +162,26 @@ until the real domain is in place — at that point set `NEXT_PUBLIC_SITE_URL`
 (e.g. `https://bloomstudio.lv`) in the Vercel project's environment variables.
 See [`src/lib/siteUrl.ts`](src/lib/siteUrl.ts).
 
+## On a phone
+
+Most visitors arrive on a phone, so the mobile layout is the one to check
+first. What that means in practice, beyond the usual responsive classes:
+
+- **Tap targets are at least ~44px.** The nav's social icons, the LV/EN
+  switch, the menu button, the footer's menu links and its email and phone
+  links all carry padding that exists only to make them thumb-sized; several
+  drop that padding again at `md:`, where a cursor is doing the pointing.
+- **Nothing is set below 11px**, and the booking buttons go up to 12px on a
+  phone. The marquee and the masthead's small caps are the only 11px lines.
+- **The masthead leads with the brand.** On a phone the three cells stack, and
+  `order-*` puts BLOOM STUDIO first so the name is on screen immediately
+  rather than below a question.
+- **The booking form asks for the right keyboard**: `inputMode` and
+  `autoComplete` on each field, so the contact field opens an email keyboard
+  and the guest count a numeric one.
+- Section padding, the torn edges and the workshop tiles' aspect all tighten
+  on a phone and return to their desktop values at `sm:`/`md:`.
+
 ## Layout notes
 
 A few details that aren't obvious from reading the components:

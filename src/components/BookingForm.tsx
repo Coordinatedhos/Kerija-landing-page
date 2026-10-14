@@ -131,13 +131,31 @@ export default function BookingForm({
               value={values[field]}
               onChange={(event) => set(field, event.target.value)}
               className={INPUT}
+              // The right keyboard on a phone, and the browser's own autofill
+              // where it has something to offer.
               {...(field === "date"
                 ? { type: "date" }
                 : field === "guests"
-                  ? { type: "number", min: 1, placeholder: copy.hints.guests }
+                  ? {
+                      type: "number",
+                      min: 1,
+                      inputMode: "numeric" as const,
+                      placeholder: copy.hints.guests,
+                    }
                   : {
                       type: "text",
                       placeholder: copy.hints[field as keyof typeof copy.hints],
+                      ...(field === "contact"
+                        ? {
+                            inputMode: "email" as const,
+                            autoComplete: "email",
+                            autoCapitalize: "off",
+                            autoCorrect: "off",
+                            spellCheck: false,
+                          }
+                        : field === "name"
+                          ? { autoComplete: "name" }
+                          : { autoComplete: "address-level2" }),
                     })}
             />
           </label>
@@ -157,7 +175,7 @@ export default function BookingForm({
       <button
         type="submit"
         disabled={state === "sending"}
-        className="mt-8 w-full bg-charcoal px-10 py-4 text-[11px] font-semibold tracking-[0.18em] text-cream uppercase transition-colors hover:bg-foreground disabled:opacity-60 sm:w-auto"
+        className="mt-8 w-full bg-charcoal px-10 py-4 text-[12px] font-semibold tracking-[0.18em] sm:text-[11px] text-cream uppercase transition-colors hover:bg-foreground disabled:opacity-60 sm:w-auto"
       >
         {state === "sending" ? copy.sending : copy.submit}
       </button>

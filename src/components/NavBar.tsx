@@ -14,7 +14,7 @@ const SOCIAL_ICONS = {
 const DESKTOP_LINK =
   "text-[13px] tracking-[0.06em] transition-opacity hover:opacity-70";
 const MOBILE_LINK =
-  "block py-3 text-[13px] tracking-[0.06em] transition-opacity hover:opacity-70";
+  "block py-3.5 text-[15px] tracking-[0.06em] transition-opacity hover:opacity-70";
 
 export default function NavBar({
   a11y,
@@ -29,7 +29,7 @@ export default function NavBar({
 
   return (
     <div className="sticky top-0 z-50 bg-ink text-white">
-      <div className="flex items-center gap-4 px-3 py-3 md:px-4">
+      <div className="flex items-center gap-2 px-2 py-1.5 sm:gap-4 sm:px-3 sm:py-3 md:px-4">
         <ul className="flex shrink-0 items-center gap-2">
           {copy.socials.map((social) => {
             const Icon =
@@ -39,7 +39,7 @@ export default function NavBar({
                 <a
                   href={social.href}
                   aria-label={social.label}
-                  className="block p-1 transition-opacity hover:opacity-70"
+                  className="block p-2.5 transition-opacity hover:opacity-70"
                 >
                   <Icon className="h-6 w-6" />
                 </a>
@@ -76,7 +76,7 @@ export default function NavBar({
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={a11y.menu}
-          className="flex h-8 w-8 flex-col items-center justify-center gap-[5px] lg:hidden"
+          className="-mr-1 flex h-11 w-11 flex-col items-center justify-center gap-[5px] lg:hidden"
         >
           <span
             className={`block h-px w-5 bg-white transition-transform ${

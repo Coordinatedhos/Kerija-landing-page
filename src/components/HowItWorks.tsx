@@ -7,7 +7,7 @@ export default function HowItWorks({
   copy: Content["howItWorks"];
 }) {
   return (
-    <section id="how-it-works" className="bg-charcoal py-16 md:py-20">
+    <section id="how-it-works" className="bg-charcoal py-12 md:py-20">
       <div className="mx-auto max-w-[1120px] px-6 md:px-8">
         <Reveal>
           <h2 className="text-center font-serif text-3xl tracking-[0.06em] text-cream sm:text-4xl lg:text-[2.6rem]">
@@ -17,7 +17,7 @@ export default function HowItWorks({
 
         {/* Five steps over three columns leaves 4 and 5 on the second row,
             left-aligned under 1 and 2 — the arrangement the mockup uses. */}
-        <ol className="mt-14 grid gap-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-14">
+        <ol className="mt-10 grid gap-9 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-14">
           {copy.steps.map((step, index) => (
             <li key={step.title}>
               {/* Stepped delays so they count themselves in, one to five. */}

@@ -9,19 +9,19 @@ export default function Workshops({
 }) {
   return (
     <section id="workshops" className="bg-cream">
-      <div className="mx-auto max-w-[1240px] px-4 py-14 md:px-8 md:py-16">
+      <div className="mx-auto max-w-[1240px] px-4 py-10 md:px-8 md:py-16">
         <Reveal>
           <h2 className="text-center font-serif text-3xl tracking-[0.02em] text-foreground sm:text-4xl lg:text-[2.6rem]">
             {copy.heading}
           </h2>
         </Reveal>
 
-        <ul className="mt-10 grid grid-cols-2 gap-4 md:gap-6 lg:grid-cols-4">
+        <ul className="mt-8 grid grid-cols-2 gap-3 md:gap-6 lg:grid-cols-4">
           {copy.items.map((item, index) => (
             <li key={item.alt}>
               {/* Staggered so the four tiles arrive one after another. */}
               <Reveal delay={index * 90}>
-                <div className="relative aspect-[2/3] w-full">
+                <div className="relative aspect-[3/4] w-full sm:aspect-[2/3]">
                   <Photo photo={item} sizes="(min-width: 1024px) 25vw, 50vw" />
                 </div>
               </Reveal>

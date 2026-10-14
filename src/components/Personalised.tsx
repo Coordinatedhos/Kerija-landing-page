@@ -45,17 +45,28 @@ export default function Personalised({
               />
             </div>
 
-            <div className="flex flex-col justify-center bg-cream px-7 py-10 sm:px-10">
-              <h2 className="text-center font-serif text-3xl tracking-[0.04em] text-foreground sm:text-4xl lg:text-[2.9rem] lg:leading-[1.15]">
-                {copy.consider.heading}
-              </h2>
-              {/* Bulleted and left-aligned, but the block itself sits centred
-                under the heading, as the mockup has it. */}
-              <ul className="mx-auto mt-7 w-fit list-disc space-y-1.5 pl-6 text-left font-serif text-base leading-[1.5] text-foreground sm:text-lg">
-                {copy.consider.items.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+            <div className="grid gap-3 lg:grid-rows-[auto_1fr]">
+              <div className="flex flex-col justify-center bg-cream px-7 py-10 sm:px-10">
+                <h2 className="text-center font-serif text-3xl tracking-[0.04em] text-foreground sm:text-4xl lg:text-[2.9rem] lg:leading-[1.15]">
+                  {copy.consider.heading}
+                </h2>
+                {/* Bulleted and left-aligned, but the block itself sits
+                  centred under the heading, as the mockup has it. */}
+                <ul className="mx-auto mt-7 w-fit list-disc space-y-1.5 pl-6 text-left font-serif text-base leading-[1.5] text-foreground sm:text-lg">
+                  {copy.consider.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Fills what the card leaves of the column, so it sits beside
+                  the list without making the row any taller. */}
+              <div className="relative aspect-[4/3] w-full lg:aspect-auto lg:min-h-[12rem]">
+                <Photo
+                  photo={copy.photos.boards}
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                />
+              </div>
             </div>
           </div>
         </Reveal>

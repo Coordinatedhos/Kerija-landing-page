@@ -12,11 +12,11 @@ export default function About({ copy }: { copy: Content["about"] }) {
           <TornEdge flip className="h-12 sm:h-32 lg:h-40" />
           <div className="paper-texture px-6 pb-4 sm:px-12">
             <Reveal>
-              <h2 className="font-serif text-4xl text-foreground sm:text-5xl">
+              <h2 className="font-script text-[2.9rem] leading-[1.2] text-foreground sm:text-[3.6rem]">
                 {copy.heading}
               </h2>
               {/* The mockup runs the paragraphs together with no gap between. */}
-              <div className="mt-3">
+              <div className="mt-5">
                 {copy.body.map((paragraph) => (
                   <p
                     key={paragraph}

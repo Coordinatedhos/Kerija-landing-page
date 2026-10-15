@@ -45,7 +45,6 @@ export default async function Home({
         <FloralBand />
         <EventsWeDo copy={content.eventsWeDo} />
         <Personalised copy={content.personalised} />
-        <FloralBand />
         <PlanExperience copy={content.plan} />
       </main>
       <Footer

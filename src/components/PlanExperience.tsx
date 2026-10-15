@@ -11,7 +11,7 @@ export default function PlanExperience({
   return (
     <section className="relative isolate">
 
-      <div className="mx-auto max-w-[1240px] px-4 py-10 md:px-8 md:py-16">
+      <div className="mx-auto max-w-[1240px] px-4 pt-6 pb-10 md:px-8 md:pt-8 md:pb-16">
         <Reveal>
           <div className="flex flex-col gap-4 lg:flex-row lg:items-stretch">
             <div className="relative aspect-[4/3] w-full lg:aspect-auto lg:w-[34%]">

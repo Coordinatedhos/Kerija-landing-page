@@ -62,7 +62,7 @@ components to change copy, photos, links, or contact details.
 | Personalised to fit your event              | `Workshops`                     | `#workshops`    |
 | How it works                                | `HowItWorks`                    | `#how-it-works` |
 | Events we do                                | `EventsWeDo`                    | `#events`       |
-| Every event is different / What we consider | `Personalised`                  | —               |
+| Every event is different                    | `Personalised`                  | —               |
 | Plan your experience now                    | `PlanExperience`                | —               |
 | Footer, with contact details                | `Footer`                        | `#contact`      |
 

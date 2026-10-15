@@ -24,7 +24,7 @@ export default function Personalised({
               </p>
             </div>
 
-            <div className="relative aspect-[3/2] w-full lg:aspect-[4/3]">
+            <div className="relative aspect-[3/2] w-full lg:aspect-auto lg:h-[27rem]">
               <Photo
                 photo={copy.photos.brushes}
                 sizes="(min-width: 1024px) 40vw, 100vw"
@@ -35,9 +35,9 @@ export default function Personalised({
 
         <Reveal>
           <div className="mt-3 grid gap-3 lg:grid-cols-2">
-            {/* Same frame as the brushes photo on a phone, so the pair matches;
-              portrait from lg up, where it sits beside the card. */}
-            <div className="relative aspect-[3/2] w-full lg:aspect-[3/4]">
+            {/* Same frame as the brushes photo at every width, so the pair
+              matches. */}
+            <div className="relative aspect-[3/2] w-full lg:aspect-auto lg:h-[27rem]">
               <Photo
                 photo={copy.photos.boards}
                 sizes="(min-width: 1024px) 40vw, 100vw"

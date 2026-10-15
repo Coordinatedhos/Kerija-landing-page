@@ -16,7 +16,7 @@ export default function Personalised({
               <h2 className="font-serif text-[1.9rem] leading-tight text-foreground sm:text-4xl">
                 {copy.heading}
               </h2>
-              <p className="mt-2 font-serif text-lg font-bold text-foreground sm:text-xl">
+              <p className="mt-3 text-balance font-script text-[2.1rem] leading-[1.25] text-foreground sm:text-[2.6rem]">
                 {copy.subheading}
               </p>
               <p className="mx-auto mt-6 max-w-[22rem] font-serif text-base leading-[1.55] text-foreground sm:text-lg">

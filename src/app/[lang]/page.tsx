@@ -28,7 +28,7 @@ export default async function Home({
     <>
       <header>
         <Marquee copy={content.marquee} />
-        <Masthead brand={content.brand} />
+        <Masthead brand={content.brand} copy={content.masthead} />
         <NavBar
           a11y={content.a11y}
           copy={content.nav}

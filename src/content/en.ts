@@ -41,6 +41,13 @@ export const en: Copy = {
     language: "Language",
   },
 
+  masthead: {
+    leftQuestion: "Need a creative touch for your event?",
+    // The double space is the mockup's, and the line is set `whitespace-pre`.
+    leftLink: "VIEW  WORKSHOP SERVICES",
+    rightQuestion: "Planning a team-building or celebration?",
+    rightNote: "BRING YOUR PEOPLE TOGETHER THROUGH CREATIVITY.",
+  },
   nav: {
     home: "HOME",
     about: "ABOUT",

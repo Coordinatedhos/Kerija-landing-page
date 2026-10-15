@@ -160,8 +160,6 @@ export const lv = {
     alts: {
       brushes:
         "Roku aplis ar bambusa matu sukām, kas apgleznotas ar saulēm, ziediem, vali un gulbi",
-      keyring:
-        "Bērna rokas tur koka atslēgu piekariņu, uz kura uzgleznota tulpe un saule",
       boards:
         "Ar rokām apgleznoti koka dēlīši un pasniegšanas paplātes uz terases dēļiem",
     },

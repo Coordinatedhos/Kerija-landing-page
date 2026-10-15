@@ -125,7 +125,6 @@ export function getContent(locale: Locale) {
       body: c.personalised.body,
       photos: {
         brushes: photo(photos.brushes, c.personalised.alts.brushes),
-        keyring: photo(photos.keyring, c.personalised.alts.keyring),
         boards: photo(photos.boards, c.personalised.alts.boards),
       },
       consider: c.personalised.consider,

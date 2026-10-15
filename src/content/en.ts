@@ -159,18 +159,6 @@ export const en: Copy = {
       boards:
         "Hand-painted wooden boards and serving trays laid out on decking",
     },
-    consider: {
-      heading: "WHAT WE CONSIDER",
-      /** What to tell us when you write — the mockup's own list. */
-      items: [
-        "Name",
-        "Email / phone",
-        "Event type",
-        "Date",
-        "Location",
-        "Number of guests",
-      ],
-    },
   },
 
   plan: {

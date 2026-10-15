@@ -15,7 +15,6 @@ import {
   navLinks,
   photos,
   socials,
-  workshopsHref,
   type Photo,
   type PhotoSlot,
 } from "./site";
@@ -63,17 +62,6 @@ export function getContent(locale: Locale) {
     a11y: c.a11y,
 
     marquee: c.marquee,
-
-    masthead: {
-      left: {
-        question: c.masthead.leftQuestion,
-        link: { label: c.masthead.leftLink, href: `/${locale}${workshopsHref}` },
-      },
-      right: {
-        question: c.masthead.rightQuestion,
-        note: c.masthead.rightNote,
-      },
-    },
 
     nav: {
       socials,

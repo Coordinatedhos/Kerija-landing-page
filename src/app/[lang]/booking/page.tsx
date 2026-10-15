@@ -43,7 +43,7 @@ export default async function BookingPage({
   return (
     <>
       <header>
-        <Masthead brand={content.brand} copy={content.masthead} />
+        <Masthead brand={content.brand} />
         <NavBar
           a11y={content.a11y}
           copy={content.nav}

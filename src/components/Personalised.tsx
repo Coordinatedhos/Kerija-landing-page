@@ -8,7 +8,7 @@ export default function Personalised({
   copy: Content["personalised"];
 }) {
   return (
-    <section className="bg-blush py-10 md:py-16">
+    <section className="blush-fade py-10 md:py-16">
       <div className="mx-auto max-w-[1240px] px-4 md:px-8">
         <Reveal>
           <div className="mx-auto max-w-[44rem] text-center">

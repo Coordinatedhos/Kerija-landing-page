@@ -43,6 +43,13 @@ export const lv = {
     language: "Valoda",
   },
 
+  masthead: {
+    leftQuestion: "Vajag radošu pieskārienu tavam pasākumam?",
+    // The double space is the mockup's, and the line is set `whitespace-pre`.
+    leftLink: "APSKATI  DARBNĪCU PIEDĀVĀJUMU",
+    rightQuestion: "Plāno saliedēšanās pasākumu vai svinības?",
+    rightNote: "SALIEDĒ SAVUS CILVĒKUS AR RADOŠUMU.",
+  },
   nav: {
     home: "SĀKUMS",
     about: "PAR MUMS",

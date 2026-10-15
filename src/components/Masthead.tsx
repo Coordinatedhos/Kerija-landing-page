@@ -1,17 +1,52 @@
 import type { Content } from "@/content";
 
-/** The brand, on its own. The two question blocks that flanked it are gone. */
-export default function Masthead({ brand }: { brand: Content["brand"] }) {
+/**
+ * The brand, flanked by the two questions — on anything wider than a phone.
+ *
+ * On a phone the questions are hidden rather than stacked: three stacked
+ * blocks put the name a screenful down, and the header came to 288px before
+ * the hero started. The brand alone is 141px.
+ */
+export default function Masthead({
+  brand,
+  copy,
+}: {
+  brand: Content["brand"];
+  copy: Content["masthead"];
+}) {
   return (
     <div className="bg-cream">
-      <div className="mx-auto max-w-[1400px] px-5 py-7 text-center md:py-10">
-        <p className="font-serif text-4xl leading-none tracking-[0.02em] text-foreground sm:text-5xl lg:text-6xl">
-          {brand.name}
-        </p>
-        <hr className="mx-auto mt-3 max-w-[22rem] border-t border-foreground/60 sm:max-w-[26rem] lg:max-w-[32rem]" />
-        <p className="mt-2 font-serif text-lg text-foreground sm:text-xl lg:text-2xl">
-          {brand.tagline}
-        </p>
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center px-5 py-7 text-center md:grid-cols-[1fr_auto_1fr] md:px-0 md:py-0">
+        <div className="hidden md:block md:border-r md:border-rust/25 md:px-10 md:py-10">
+          <p className="font-serif text-lg leading-snug text-foreground md:text-xl">
+            {copy.left.question}
+          </p>
+          <a
+            href={copy.left.link.href}
+            className="mt-3 inline-block text-[11px] font-semibold tracking-[0.08em] whitespace-pre text-foreground uppercase transition-colors hover:text-rust"
+          >
+            {copy.left.link.label}
+          </a>
+        </div>
+
+        <div className="md:px-14 md:py-10">
+          <p className="font-serif text-4xl leading-none tracking-[0.02em] text-foreground sm:text-5xl lg:text-6xl">
+            {brand.name}
+          </p>
+          <hr className="mx-auto mt-3 max-w-[22rem] border-t border-foreground/60 sm:max-w-none" />
+          <p className="mt-2 font-serif text-lg text-foreground sm:text-xl lg:text-2xl">
+            {brand.tagline}
+          </p>
+        </div>
+
+        <div className="hidden md:block md:border-l md:border-rust/25 md:px-10 md:py-10">
+          <p className="font-serif text-lg leading-snug text-foreground md:text-xl">
+            {copy.right.question}
+          </p>
+          <p className="mt-3 text-[10px] font-semibold tracking-[0.04em] text-foreground uppercase">
+            {copy.right.note}
+          </p>
+        </div>
       </div>
     </div>
   );

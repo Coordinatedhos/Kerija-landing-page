@@ -35,9 +35,9 @@ export default function Personalised({
 
         <Reveal>
           <div className="mt-3 grid gap-3 lg:grid-cols-2">
-            {/* Portrait, so the photo keeps its subject rather than being cut
-              to a strip. */}
-            <div className="relative aspect-[3/4] w-full">
+            {/* Same frame as the brushes photo on a phone, so the pair matches;
+              portrait from lg up, where it sits beside the card. */}
+            <div className="relative aspect-[3/2] w-full lg:aspect-[3/4]">
               <Photo
                 photo={copy.photos.boards}
                 sizes="(min-width: 1024px) 40vw, 100vw"

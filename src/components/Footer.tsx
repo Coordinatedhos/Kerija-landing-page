@@ -78,7 +78,7 @@ export default function Footer({
             </div>
 
             <div className="md:pl-10 md:text-right">
-              <p className="font-serif text-xl leading-snug text-foreground">
+              <p className="font-script text-[1.9rem] leading-[1.25] text-foreground">
                 {copy.note}
               </p>
               <ul className="mt-5 space-y-2 md:flex md:flex-col md:items-end">

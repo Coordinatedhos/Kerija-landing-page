@@ -11,7 +11,7 @@ export default function Hero({ copy }: { copy: Content["hero"] }) {
 
       <div className="mx-auto max-w-[1400px] px-4 pt-6 pb-8 md:px-8 md:pt-14 md:pb-0">
         <div className="grid items-start gap-4 lg:grid-cols-12 lg:gap-0">
-          <div className="bg-slate px-6 py-10 sm:px-12 sm:py-14 lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:py-24 lg:pr-24">
+          <div className="bg-slate px-6 py-10 sm:px-12 sm:py-14 lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:py-24 lg:pr-[21%]">
             <Reveal>
               <h1 className="font-serif text-3xl leading-tight tracking-[0.02em] text-white sm:text-4xl lg:text-[2.9rem]">
                 {copy.heading}
@@ -26,7 +26,9 @@ export default function Hero({ copy }: { copy: Content["hero"] }) {
           </div>
 
           {/* Explicit row keeps this in the same grid row as the card so the
-              photo overlaps it, as in the mockup. The negative bottom margin
+              photo overlaps it, as in the mockup — the card's right padding
+              is a share of its own width, so the text clears that overlap at
+              every width. The negative bottom margin
               lets it hang past the section and over the About card. */}
           <Reveal
             className="relative z-10 lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:mt-16 lg:-mb-20"

@@ -15,11 +15,20 @@ export default function HowItWorks({
           </h2>
         </Reveal>
 
-        {/* Five steps over three columns leaves 4 and 5 on the second row,
-            left-aligned under 1 and 2 — the arrangement the mockup uses. */}
-        <ol className="mt-10 grid gap-9 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-14">
+        {/* Three steps to a row, counted in columns of two so the pair left
+            over on the last row sits centred rather than hard left. */}
+        <ol className="mt-10 grid gap-9 sm:grid-cols-4 lg:grid-cols-6 lg:gap-x-12 lg:gap-y-14">
           {copy.steps.map((step, index) => (
-            <li key={step.title}>
+            <li
+              key={step.title}
+              className={`sm:col-span-2 ${
+                index === 3
+                  ? "lg:col-start-2"
+                  : index === 4
+                    ? "sm:col-start-2 lg:col-start-4"
+                    : ""
+              }`}
+            >
               {/* Stepped delays so they count themselves in, one to five. */}
               <Reveal delay={index * 110} className="text-center">
                 <span

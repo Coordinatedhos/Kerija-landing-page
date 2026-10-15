@@ -169,9 +169,9 @@ first. What that means in practice, beyond the usual responsive classes:
   drop that padding again at `md:`, where a cursor is doing the pointing.
 - **Nothing is set below 11px**, and the booking buttons go up to 12px on a
   phone. The marquee and the masthead's small caps are the only 11px lines.
-- **The masthead leads with the brand.** On a phone the three cells stack, and
-  `order-*` puts BLOOM STUDIO first so the name is on screen immediately
-  rather than below a question.
+- **The masthead is only the brand** — the name, a rule, the tagline. The two
+  question blocks that flanked it are gone, which is most of why the header is
+  141px on a phone rather than 288px.
 - **The booking form asks for the right keyboard**: `inputMode` and
   `autoComplete` on each field, so the contact field opens an email keyboard
   and the guest count a numeric one.

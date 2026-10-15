@@ -68,9 +68,6 @@ export const navLinks: {
   { key: "reserve", href: "#contact", booking: true },
 ];
 
-/** Where the masthead's one link points. */
-export const workshopsHref = "#workshops";
-
 export const photos = {
   heroPots: { src: "/images/hero-pots.jpg" },
   workshops: {

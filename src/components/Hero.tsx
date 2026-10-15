@@ -31,7 +31,7 @@ export default function Hero({ copy }: { copy: Content["hero"] }) {
               every width. The negative bottom margin
               lets it hang past the section and over the About card. */}
           <Reveal
-            className="relative z-10 lg:col-span-5 lg:col-start-8 lg:row-start-1 lg:mt-16 lg:-mb-20"
+            className="relative z-10 lg:col-span-5 lg:col-start-6 lg:row-start-1 lg:mt-16 lg:-mb-20"
             delay={120}
           >
             <div className="relative aspect-[4/3] w-full lg:aspect-[7/6]">

@@ -162,18 +162,6 @@ export const lv = {
       boards:
         "Ar rokām apgleznoti koka dēlīši un pasniegšanas paplātes uz terases dēļiem",
     },
-    consider: {
-      heading: "KO MĒS ŅEMAM VĒRĀ",
-      /** What to tell us when you write — the mockup's own list. */
-      items: [
-        "Vārds",
-        "E-pasts / tālrunis",
-        "Pasākuma veids",
-        "Datums",
-        "Norises vieta",
-        "Viesu skaits",
-      ],
-    },
   },
 
   plan: {

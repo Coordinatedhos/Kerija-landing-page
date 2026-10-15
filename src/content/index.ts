@@ -127,7 +127,6 @@ export function getContent(locale: Locale) {
         brushes: photo(photos.brushes, c.personalised.alts.brushes),
         boards: photo(photos.boards, c.personalised.alts.boards),
       },
-      consider: c.personalised.consider,
     },
 
     /** The invitation band: photo, headline, booking button. */

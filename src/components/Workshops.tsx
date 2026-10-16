@@ -8,7 +8,7 @@ export default function Workshops({
   copy: Content["workshops"];
 }) {
   return (
-    <section id="workshops" className="bg-cream">
+    <section id="workshops">
       <div className="mx-auto max-w-[1240px] px-4 py-10 md:px-8 md:py-16">
         <Reveal>
           <h2 className="text-center font-serif text-3xl tracking-[0.02em] text-foreground sm:text-4xl lg:text-[2.6rem]">

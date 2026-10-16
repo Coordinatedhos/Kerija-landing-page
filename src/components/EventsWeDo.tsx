@@ -8,7 +8,7 @@ export default function EventsWeDo({
   copy: Content["eventsWeDo"];
 }) {
   return (
-    <section id="events" className="bg-cream pt-10 pb-10 md:pt-16 md:pb-14">
+    <section id="events" className="pt-10 pb-10 md:pt-16 md:pb-14">
       <div className="mx-auto max-w-[1240px] px-4 md:px-8">
         {/* Sizing the circle off the card's height rather than the column width
             is what keeps the two flush top and bottom, as the mockup has them. */}

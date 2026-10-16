@@ -6,7 +6,7 @@ export default function About({ copy }: { copy: Content["about"] }) {
   return (
     <section id="about" className="relative z-10 isolate">
 
-      <div className="mx-auto max-w-[1240px] px-4 pt-8 pb-8 md:px-8 md:pt-24 md:pb-24">
+      <div className="mx-auto max-w-[1240px] px-4 pt-8 pb-2 md:px-8 md:pt-24 md:pb-6">
         {/* Torn on the top and bottom edges, cut clean on the sides. */}
         <div className="text-paper">
           <TornEdge flip className="h-12 sm:h-32 lg:h-40" />

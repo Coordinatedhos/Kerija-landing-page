@@ -9,7 +9,7 @@ export default function Workshops({
 }) {
   return (
     <section id="workshops">
-      <div className="mx-auto max-w-[1240px] px-4 py-10 md:px-8 md:py-16">
+      <div className="mx-auto max-w-[1240px] px-4 pt-6 pb-10 md:px-8 md:pt-8 md:pb-16">
         <Reveal>
           <h2 className="text-center font-serif text-3xl tracking-[0.02em] text-foreground sm:text-4xl lg:text-[2.6rem]">
             {copy.heading}

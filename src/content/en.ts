@@ -203,11 +203,8 @@ export const en: Copy = {
     sending: "Sending…",
     success: {
       heading: "Thank you!",
-      body: "We have your enquiry and will be in touch shortly.",
+      body: "We will review your enquiry and get in touch very soon.",
     },
-    /** Shown when the site has no mail service set up and we hand over to the visitor's own. */
-    mailto:
-      "Opening your email app with the message already filled in — all that's left is to send it.",
     error: "The enquiry could not be sent. Try again, or write to us directly:",
     emailSubject: "New workshop enquiry",
     back: "Back to the home page",

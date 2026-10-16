@@ -206,11 +206,8 @@ export const lv = {
     sending: "Sūta…",
     success: {
       heading: "Paldies!",
-      body: "Pieteikums ir saņemts. Sazināsimies ar tevi tuvākajā laikā.",
+      body: "Mēs izskatīsim jūsu pieteikumu un sazināsimies pavisam drīz.",
     },
-    /** Shown when the site has no mail service set up and we hand over to the visitor's own. */
-    mailto:
-      "Atveram tavu e-pasta programmu ar jau aizpildītu vēstuli — atliek to nosūtīt.",
     error: "Neizdevās nosūtīt pieteikumu. Mēģini vēlreiz vai raksti mums tieši:",
     emailSubject: "Jauns darbnīcas pieteikums",
     back: "Atpakaļ uz sākumu",

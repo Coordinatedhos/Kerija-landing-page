@@ -38,8 +38,6 @@ export default function BookingForm({
   const [state, setState] = useState<"idle" | "sending" | "sent" | "failed">(
     "idle",
   );
-  const [handedOver, setHandedOver] = useState(false);
-
   function set(field: Field, value: string) {
     setValues((current) => ({ ...current, [field]: value }));
   }
@@ -79,7 +77,6 @@ export default function BookingForm({
       // visitor's own mail app rather than losing the enquiry.
       const { reason } = (await response.json()) as { reason?: string };
       if (reason === "not-configured") {
-        setHandedOver(true);
         setState("sent");
         window.location.href = mailtoHref();
         return;
@@ -97,16 +94,8 @@ export default function BookingForm({
           {copy.success.heading}
         </h2>
         <p className="mx-auto mt-4 max-w-[30rem] text-[15px] leading-relaxed text-foreground/75">
-          {handedOver ? copy.mailto : copy.success.body}
+          {copy.success.body}
         </p>
-        {handedOver ? (
-          <a
-            href={mailtoHref()}
-            className="mt-6 inline-block text-[12px] tracking-[0.12em] text-rust uppercase underline underline-offset-4"
-          >
-            {email}
-          </a>
-        ) : null}
       </div>
     );
   }
